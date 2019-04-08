@@ -22,6 +22,9 @@
 		47BC0937225BD0190088BD70 /* FlickrImageSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC0927225A379C0088BD70 /* FlickrImageSearchRepository.swift */; };
 		47BC093A225BD0470088BD70 /* FlickrApiUrlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC0939225BD0470088BD70 /* FlickrApiUrlFactory.swift */; };
 		47BC093C225BD6470088BD70 /* PhotoResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC093B225BD6470088BD70 /* PhotoResponseDto.swift */; };
+		47BC093F225BDAD10088BD70 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC093E225BDAD10088BD70 /* Photo.swift */; };
+		47BC0941225BDAE70088BD70 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC0940225BDAE70088BD70 /* Page.swift */; };
+		47BC0943225BDB070088BD70 /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC0942225BDB070088BD70 /* RepositoryError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,9 @@
 		47BC0927225A379C0088BD70 /* FlickrImageSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrImageSearchRepository.swift; sourceTree = "<group>"; };
 		47BC0939225BD0470088BD70 /* FlickrApiUrlFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrApiUrlFactory.swift; sourceTree = "<group>"; };
 		47BC093B225BD6470088BD70 /* PhotoResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResponseDto.swift; sourceTree = "<group>"; };
+		47BC093E225BDAD10088BD70 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		47BC0940225BDAE70088BD70 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		47BC0942225BDB070088BD70 /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,7 @@
 			children = (
 				47BC0925225A36A70088BD70 /* ImageSearchPresenter.swift */,
 				47BC0923225A36570088BD70 /* ImageSearchInteractor.swift */,
+				47BC093D225BDAC50088BD70 /* Models */,
 				47BC0907225A36000088BD70 /* BusinessLogicKit.h */,
 				47BC0908225A36000088BD70 /* Info.plist */,
 			);
@@ -172,6 +179,16 @@
 				47BC0939225BD0470088BD70 /* FlickrApiUrlFactory.swift */,
 			);
 			path = FlickrApi;
+			sourceTree = "<group>";
+		};
+		47BC093D225BDAC50088BD70 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				47BC093E225BDAD10088BD70 /* Photo.swift */,
+				47BC0940225BDAE70088BD70 /* Page.swift */,
+				47BC0942225BDB070088BD70 /* RepositoryError.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,8 +348,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47BC093F225BDAD10088BD70 /* Photo.swift in Sources */,
 				47BC0926225A36A70088BD70 /* ImageSearchPresenter.swift in Sources */,
+				47BC0941225BDAE70088BD70 /* Page.swift in Sources */,
 				47BC0924225A36570088BD70 /* ImageSearchInteractor.swift in Sources */,
+				47BC0943225BDB070088BD70 /* RepositoryError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
