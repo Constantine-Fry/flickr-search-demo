@@ -11,6 +11,7 @@ final class FlickrImageSearchRepository: ImageSearchRepositoring {
     private let session: URLSession
     private let requestFactory: FlickrApiUrlFactory
     private let queue: DispatchQueue
+    private var searchTask: URLSessionTask?
 
     init(session: URLSession, requestFactory: FlickrApiUrlFactory, queue: DispatchQueue) {
         self.session = session
@@ -20,7 +21,8 @@ final class FlickrImageSearchRepository: ImageSearchRepositoring {
 
     public func search(term: String, completion: @escaping (Result<Page, Error>) -> Void) {
         let request = self.requestFactory.makeSearchRequest(text: term)
-        self.getData(with: request) { (result) in
+        self.searchTask?.cancel()
+        self.searchTask = self.getData(with: request) { (result) in
             self.queue.async {
                 switch result {
                 case .failure(let error):
@@ -35,6 +37,7 @@ final class FlickrImageSearchRepository: ImageSearchRepositoring {
                 }
             }
         }
+        self.searchTask?.resume()
     }
 
     private func makePage(from data: Data) throws -> Page {
@@ -49,8 +52,12 @@ final class FlickrImageSearchRepository: ImageSearchRepositoring {
         return Page(page: response.photos.page, pages: response.photos.pages, photos: photos)
     }
 
-    private func getData(with request: URLRequest, completion: @escaping (Result<Data, Error>) -> Void) {
-        let task = self.session.dataTask(with: request) { (data, response, error) in
+    private func getData(with request: URLRequest,
+                         completion: @escaping (Result<Data, Error>) -> Void) -> URLSessionTask {
+        return self.session.dataTask(with: request) { (data, response, error) in
+            if let error = error as? URLError, error.code == .cancelled {
+                return
+            }
             let response = response as? HTTPURLResponse
             if let data = data, response?.statusCode == 200 {
                 completion(.success(data))
@@ -58,7 +65,6 @@ final class FlickrImageSearchRepository: ImageSearchRepositoring {
                 completion(.failure(RepositoryError.failedToLoad))
             }
         }
-        task.resume()
     }
 
 }
