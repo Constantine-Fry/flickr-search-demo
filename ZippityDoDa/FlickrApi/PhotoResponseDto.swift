@@ -23,4 +23,5 @@ struct PhotoResponseDto: Decodable {
     }
 
     let photos: PhotosDto
+    let stat: String
 }

@@ -18,7 +18,7 @@ final class FlickrImageSearchRepository: ImageSearchRepositoring {
         self.queue = queue
     }
 
-    public func search(term: String, completion: @escaping (Result<[Photo], Error>) -> Void) {
+    public func search(term: String, completion: @escaping (Result<Page, Error>) -> Void) {
         let request = self.requestFactory.makeSearchRequest(text: term)
         let requestFactory = self.requestFactory
         self.getData(with: request) { (result) in
@@ -29,11 +29,16 @@ final class FlickrImageSearchRepository: ImageSearchRepositoring {
                 case .success(let data):
                     do {
                         let response = try JSONDecoder().decode(PhotoResponseDto.self, from: data)
+                        guard response.stat == "ok" else {
+                            throw RepositoryError.failedToLoad
+                        }
                         let photos = response.photos.photo.map({ (dto) -> Photo in
                             let url = requestFactory.makePhotoUrl(photo: dto)
                             return Photo(identifier: dto.id, url: url, title: dto.title)
                         })
-                        completion(.success(photos))
+                        completion(.success(Page(page: response.photos.page,
+                                                 pages: response.photos.pages,
+                                                 photos: photos)))
                     } catch {
                         completion(.failure(error))
                     }
