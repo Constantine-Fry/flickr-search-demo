@@ -5,7 +5,6 @@
 
 import Foundation
 
-
 struct FlickrApiUrlFactory {
 
     private let apiKey: String

@@ -20,7 +20,6 @@ final class FlickrImageSearchRepository: ImageSearchRepositoring {
 
     public func search(term: String, completion: @escaping (Result<Page, Error>) -> Void) {
         let request = self.requestFactory.makeSearchRequest(text: term)
-        let requestFactory = self.requestFactory
         self.getData(with: request) { (result) in
             self.queue.async {
                 switch result {
@@ -28,17 +27,8 @@ final class FlickrImageSearchRepository: ImageSearchRepositoring {
                     completion(.failure(error))
                 case .success(let data):
                     do {
-                        let response = try JSONDecoder().decode(PhotoResponseDto.self, from: data)
-                        guard response.stat == "ok" else {
-                            throw RepositoryError.failedToLoad
-                        }
-                        let photos = response.photos.photo.map({ (dto) -> Photo in
-                            let url = requestFactory.makePhotoUrl(photo: dto)
-                            return Photo(identifier: dto.id, url: url, title: dto.title)
-                        })
-                        completion(.success(Page(page: response.photos.page,
-                                                 pages: response.photos.pages,
-                                                 photos: photos)))
+                        let page = try self.makePage(from: data)
+                        completion(.success(page))
                     } catch {
                         completion(.failure(error))
                     }
@@ -47,7 +37,19 @@ final class FlickrImageSearchRepository: ImageSearchRepositoring {
         }
     }
 
-    public func getData(with request: URLRequest, completion: @escaping (Result<Data, Error>) -> Void) {
+    private func makePage(from data: Data) throws -> Page {
+        let response = try JSONDecoder().decode(PhotoResponseDto.self, from: data)
+        guard response.stat == "ok" else {
+            throw RepositoryError.failedToLoad
+        }
+        let photos = response.photos.photo.map({ (dto) -> Photo in
+            let url = self.requestFactory.makePhotoUrl(photo: dto)
+            return Photo(identifier: dto.id, url: url, title: dto.title)
+        })
+        return Page(page: response.photos.page, pages: response.photos.pages, photos: photos)
+    }
+
+    private func getData(with request: URLRequest, completion: @escaping (Result<Data, Error>) -> Void) {
         let task = self.session.dataTask(with: request) { (data, response, error) in
             let response = response as? HTTPURLResponse
             if let data = data, response?.statusCode == 200 {
