@@ -15,4 +15,10 @@ public final class ImageSearchInteractor: ImageSearchUseCase {
         self.repository = repository
     }
 
+    public func search(term: String, completion: @escaping (Result<Page, Error>) -> Void) {
+        self.repository.search(term: term) {
+            completion($0)
+        }
+    }
+
 }
