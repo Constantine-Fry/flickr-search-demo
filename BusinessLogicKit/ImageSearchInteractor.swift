@@ -7,7 +7,20 @@ public protocol ImageSearchRepositoring {
 
 }
 
-public struct Photo: Decodable {
+public struct Page {
+    let page: UInt
+    let pages: UInt
+    let photos: [Photo]
+
+    public init(page: UInt, pages: UInt, photos: [Photo]) {
+        self.page = page
+        self.pages = pages
+        self.photos = photos
+    }
+    
+}
+
+public struct Photo {
 
     let identifier: String
     let url: URL
