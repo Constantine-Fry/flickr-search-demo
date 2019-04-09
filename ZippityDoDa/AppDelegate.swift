@@ -24,12 +24,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let keyData: [UInt8] = [51, 101, 55, 99, 99, 50, 54, 54, 97, 101, 50, 98, 48, 101, 48,
                                 100, 55, 56, 101, 50, 55, 57, 99, 101, 56, 101, 51, 54, 49, 55, 51, 54]
 
-        let repository = FlickrImageSearchRepository(
-            session: URLSession(configuration: .default),
+        let session = URLSession(configuration: .default)
+        let searchRepository = FlickrImageSearchRepository(
+            session: session,
             requestFactory: FlickrApiUrlFactory(apiKey: String(bytes: keyData, encoding: .utf8)!),
             queue: DispatchQueue(label: "com.app.flickr-repository.queue"))
-        let interactor = ImageSearchInteractor(repository: repository)
-        let presenter = ImageSearchPresenter(interactor: interactor)
+        let loadingRepository = ImageRepository(session: session)
+        let presenter = ImageSearchPresenter(interactor: ImageSearchInteractor(repository: searchRepository),
+                                             imageLoadingInteractor:
+            ImagesInteractor(repository: loadingRepository,
+                             queue: DispatchQueue(label: "com.app.images-interactor.queue")))
         let viewController = self.window?.rootViewController as! ViewController
         presenter.view = viewController
         viewController.presenter = presenter

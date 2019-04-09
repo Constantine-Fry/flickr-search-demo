@@ -11,16 +11,21 @@ public protocol ImageSearchUseCase {
     func search(term: String, completion: @escaping (Result<Page, Error>) -> Void)
 }
 
-public protocol ImageSearchPresenting {
-    func search(term: String)
+public protocol ImagesUseCase {
+    func cachedImage(for photo: Photo) -> CGImage?
+    func loadImage(for photo: Photo, completion: @escaping (CGImage?) -> Void)
+    func stopLoadImage(for photo: Photo)
 }
 
-public struct ImageViewItem {
-    public let url: URL
+public protocol ImageSearchPresenting {
+    func search(term: String)
+    func cachedImage(for photo: Photo) -> CGImage?
+    func loadImage(for photo: Photo, completion: @escaping (CGImage?) -> Void)
+    func stopLoadImage(for photo: Photo)
 }
 
 public struct ImageSearchViewItem {
-    public let images: [ImageViewItem]
+    public let photos: [Photo]
     public let hasMore: Bool
 }
 
@@ -35,10 +40,12 @@ public final class ImageSearchPresenter: ImageSearchPresenting {
 
     public weak var view: ImageSearchViewing?
     private let interactor: ImageSearchUseCase
+    private let imageLoadingInteractor: ImagesUseCase
     private var term = ""
 
-    public init(interactor: ImageSearchUseCase) {
+    public init(interactor: ImageSearchUseCase, imageLoadingInteractor: ImagesUseCase) {
         self.interactor = interactor
+        self.imageLoadingInteractor = imageLoadingInteractor
     }
 
     public func search(term: String) {
@@ -54,11 +61,27 @@ public final class ImageSearchPresenter: ImageSearchPresenting {
                 case .failure:
                     self.view?.update(.presentError(NSLocalizedString("Failed", comment: "")))
                 case .success(let page):
-                    self.view?.update(.set(ImageSearchViewItem(images: page.photos.map( { ImageViewItem(url: $0.url) }),
-                                                              hasMore: page.page < page.pages)))
+                    self.view?.update(.set(ImageSearchViewItem(photos: page.photos,
+                                                               hasMore: page.page < page.pages)))
                 }
             }
         }
+    }
+
+    public func cachedImage(for photo: Photo) -> CGImage? {
+        return self.imageLoadingInteractor.cachedImage(for: photo)
+    }
+
+    public func loadImage(for photo: Photo, completion: @escaping (CGImage?) -> Void) {
+        self.imageLoadingInteractor.loadImage(for: photo) { image in
+            DispatchQueue.main.async {
+                completion(image)
+            }
+        }
+    }
+
+    public func stopLoadImage(for photo: Photo) {
+        self.imageLoadingInteractor.stopLoadImage(for: photo)
     }
 
     func loadMore() {

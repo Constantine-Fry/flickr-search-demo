@@ -25,6 +25,9 @@
 		47BC093F225BDAD10088BD70 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC093E225BDAD10088BD70 /* Photo.swift */; };
 		47BC0941225BDAE70088BD70 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC0940225BDAE70088BD70 /* Page.swift */; };
 		47BC0943225BDB070088BD70 /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC0942225BDB070088BD70 /* RepositoryError.swift */; };
+		47BC097B225CFBB70088BD70 /* ImagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC097A225CFBB70088BD70 /* ImagesInteractor.swift */; };
+		47BC097D225D055E0088BD70 /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC097C225D055E0088BD70 /* ImageRepository.swift */; };
+		47BC097F225D092D0088BD70 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC097E225D092D0088BD70 /* ImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,9 @@
 		47BC093E225BDAD10088BD70 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		47BC0940225BDAE70088BD70 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		47BC0942225BDB070088BD70 /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
+		47BC097A225CFBB70088BD70 /* ImagesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesInteractor.swift; sourceTree = "<group>"; };
+		47BC097C225D055E0088BD70 /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
+		47BC097E225D092D0088BD70 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,7 @@
 			children = (
 				47BC08E0225A33D60088BD70 /* AppDelegate.swift */,
 				47BC08E2225A33D60088BD70 /* ViewController.swift */,
+				47BC097E225D092D0088BD70 /* ImageCell.swift */,
 				47BC0938225BD02E0088BD70 /* FlickrApi */,
 				47BC08E4225A33D60088BD70 /* Main.storyboard */,
 				47BC08E7225A33D70088BD70 /* Assets.xcassets */,
@@ -155,6 +162,7 @@
 			children = (
 				47BC0925225A36A70088BD70 /* ImageSearchPresenter.swift */,
 				47BC0923225A36570088BD70 /* ImageSearchInteractor.swift */,
+				47BC097A225CFBB70088BD70 /* ImagesInteractor.swift */,
 				47BC093D225BDAC50088BD70 /* Models */,
 				47BC0907225A36000088BD70 /* BusinessLogicKit.h */,
 				47BC0908225A36000088BD70 /* Info.plist */,
@@ -177,6 +185,7 @@
 				47BC0927225A379C0088BD70 /* FlickrImageSearchRepository.swift */,
 				47BC093B225BD6470088BD70 /* PhotoResponseDto.swift */,
 				47BC0939225BD0470088BD70 /* FlickrApiUrlFactory.swift */,
+				47BC097C225D055E0088BD70 /* ImageRepository.swift */,
 			);
 			path = FlickrApi;
 			sourceTree = "<group>";
@@ -337,9 +346,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				47BC093A225BD0470088BD70 /* FlickrApiUrlFactory.swift in Sources */,
+				47BC097D225D055E0088BD70 /* ImageRepository.swift in Sources */,
 				47BC093C225BD6470088BD70 /* PhotoResponseDto.swift in Sources */,
 				47BC08E3225A33D60088BD70 /* ViewController.swift in Sources */,
 				47BC08E1225A33D60088BD70 /* AppDelegate.swift in Sources */,
+				47BC097F225D092D0088BD70 /* ImageCell.swift in Sources */,
 				47BC0937225BD0190088BD70 /* FlickrImageSearchRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,6 +361,7 @@
 			files = (
 				47BC093F225BDAD10088BD70 /* Photo.swift in Sources */,
 				47BC0926225A36A70088BD70 /* ImageSearchPresenter.swift in Sources */,
+				47BC097B225CFBB70088BD70 /* ImagesInteractor.swift in Sources */,
 				47BC0941225BDAE70088BD70 /* Page.swift in Sources */,
 				47BC0924225A36570088BD70 /* ImageSearchInteractor.swift in Sources */,
 				47BC0943225BDB070088BD70 /* RepositoryError.swift in Sources */,

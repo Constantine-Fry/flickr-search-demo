@@ -5,7 +5,7 @@
 
 public struct Photo {
 
-    let identifier: String
+    public let identifier: String
     let url: URL
     let title: String
 
