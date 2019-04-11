@@ -4,7 +4,7 @@
 //
 
 public protocol ImageSearchViewing: class {
-    func update(_ update: ImageViewUpdate)
+    func update(_ state: ImageViewState)
 }
 
 public protocol ImageSearchUseCase {
@@ -33,8 +33,9 @@ public struct ImageSearchViewItem {
     let text: String
 }
 
-public enum ImageViewUpdate {
+public enum ImageViewState {
     case showEmpty
+    case showLoading
     case presentError(String)
     case set(ImageSearchViewItem)
 }
@@ -57,7 +58,7 @@ public final class ImageSearchPresenter: ImageSearchPresenting {
     }
 
     public func search(term: String) {
-        self.view?.update(.showEmpty)
+        self.view?.update(.showLoading)
         self.term = term
         if term.isEmpty {
             return

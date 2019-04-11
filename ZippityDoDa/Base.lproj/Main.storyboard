@@ -64,10 +64,15 @@
                                     <outlet property="prefetchDataSource" destination="BYZ-38-t0r" id="C4H-4y-6mL"/>
                                 </connections>
                             </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="oLK-hK-g6n">
+                                <rect key="frame" x="197" y="170" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="oLK-hK-g6n" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="0Ur-fj-KG9"/>
                             <constraint firstItem="vJ8-sY-440" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1fG-Aq-IGs"/>
+                            <constraint firstItem="oLK-hK-g6n" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="Bzw-FM-Tho"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vJ8-sY-440" secondAttribute="trailing" id="NFW-NJ-an4"/>
                             <constraint firstItem="vJ8-sY-440" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OcO-k4-aD8"/>
                             <constraint firstItem="N3Z-YO-rVw" firstAttribute="top" secondItem="vJ8-sY-440" secondAttribute="bottom" id="PdY-gQ-5LJ"/>
@@ -78,6 +83,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="oLK-hK-g6n" id="exo-4b-ncH"/>
                         <outlet property="collectienView" destination="N3Z-YO-rVw" id="5PS-Dg-J0l"/>
                         <outlet property="searchField" destination="vJ8-sY-440" id="wI5-D9-Vcg"/>
                     </connections>

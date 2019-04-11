@@ -18,20 +18,27 @@ class ViewController: UIViewController, ImageSearchViewing {
 
     var presenter: ImageSearchPresenting?
 
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    func update(_ update: ImageViewUpdate) {
-        switch update {
+    func update(_ state: ImageViewState) {
+        switch state {
         case .presentError(let text):
+            self.activityIndicator.stopAnimating()
             self.viewItem = nil
             self.showError(text)
         case .showEmpty:
+            self.activityIndicator.stopAnimating()
             self.viewItem = nil
-            break
         case .set(let item):
+            self.activityIndicator.stopAnimating()
             self.viewItem = item
+        case .showLoading:
+            self.activityIndicator.startAnimating()
+            self.viewItem = nil
         }
         self.collectienView.reloadData()
     }
