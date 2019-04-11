@@ -19,8 +19,8 @@ final class FlickrImageSearchRepository: ImageSearchRepositoring {
         self.queue = queue
     }
 
-    public func search(term: String, completion: @escaping (Result<Page, Error>) -> Void) {
-        let request = self.requestFactory.makeSearchRequest(text: term)
+    public func search(query: SearchQuery, completion: @escaping (Result<Page, Error>) -> Void) {
+        let request = self.requestFactory.makeSearchRequest(query: query)
         self.searchTask?.cancel()
         self.searchTask = self.getData(with: request) { (result) in
             self.queue.async {

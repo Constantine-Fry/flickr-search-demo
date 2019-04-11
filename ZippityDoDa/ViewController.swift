@@ -32,8 +32,6 @@ class ViewController: UIViewController, ImageSearchViewing {
             break
         case .set(let item):
             self.viewItem = item
-        case .append:
-            break
         }
         self.collectienView.reloadData()
     }
@@ -69,13 +67,15 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
         if let image = self.presenter?.cachedImage(for: photo) {
             cell.imageView.image = UIImage(cgImage: image)
         }
+        if let viewItem = self.viewItem, indexPath.row == viewItem.photos.count - 20 {
+            self.presenter?.loadMore(for: viewItem)
+        }
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if let cell = cell as? ImageCell, let photo = cell.photo, cell.imageView.image == nil {
-            print("### will load \(photo.identifier)")
             self.presenter?.loadImage(for: photo, completion: { (image) in
                 if let image = image {
                     UIView.transition(with: cell.imageView, duration: 0.2, options: .transitionCrossDissolve,

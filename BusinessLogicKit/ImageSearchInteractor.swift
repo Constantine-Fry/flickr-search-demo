@@ -4,7 +4,7 @@
 //
 
 public protocol ImageSearchRepositoring {
-    func search(term: String, completion: @escaping (Result<Page, Error>) -> Void)
+    func search(query: SearchQuery, completion: @escaping (Result<Page, Error>) -> Void)
 }
 
 public final class ImageSearchInteractor: ImageSearchUseCase {
@@ -15,8 +15,8 @@ public final class ImageSearchInteractor: ImageSearchUseCase {
         self.repository = repository
     }
 
-    public func search(term: String, completion: @escaping (Result<Page, Error>) -> Void) {
-        self.repository.search(term: term) {
+    public func search(query: SearchQuery, completion: @escaping (Result<Page, Error>) -> Void) {
+        self.repository.search(query: query) {
             completion($0)
         }
     }

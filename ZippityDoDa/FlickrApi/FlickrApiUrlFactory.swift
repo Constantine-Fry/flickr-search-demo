@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import BusinessLogicKit
 
 struct FlickrApiUrlFactory {
 
@@ -13,12 +14,13 @@ struct FlickrApiUrlFactory {
         self.apiKey = apiKey
     }
 
-    func makeSearchRequest(text: String) -> URLRequest {
+    func makeSearchRequest(query: SearchQuery) -> URLRequest {
         var components = URLComponents(string: "https://api.flickr.com/services/rest")
         components?.queryItems = [
             URLQueryItem(name: "method", value: "flickr.photos.search"),
             URLQueryItem(name: "api_key", value: self.apiKey),
-            URLQueryItem(name: "text", value: text),
+            URLQueryItem(name: "text", value: query.text),
+            URLQueryItem(name: "page", value: "\(query.page)"),
 
             URLQueryItem(name: "format", value: "json"),
             URLQueryItem(name: "nojsoncallback", value: "1"),
