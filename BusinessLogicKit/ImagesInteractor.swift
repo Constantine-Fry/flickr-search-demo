@@ -16,23 +16,32 @@ public protocol ImagesRepositoring {
 
 public final class ImagesInteractor: ImagesUseCase {
 
-    private let cache = NSCache<NSString, CGImage>()
+    private final class ImageHolder {
+
+        let image: CGImage
+
+        init(_ image: CGImage) {
+            self.image = image
+        }
+
+    }
+
+    private let cache = NSCache<NSString, ImageHolder>()
     private var tasks = [String: TaskProtocol]()
     private let repository: ImagesRepositoring
     private let queue: DispatchQueue
     private var completionBlocks = [String: [(CGImage?) -> Void]]()
 
     public init(repository: ImagesRepositoring, queue: DispatchQueue) {
-        self.cache.countLimit = 30
+        self.cache.totalCostLimit = 60*1024*1024
         self.repository = repository
         self.queue = queue
     }
 
-
     public func cachedImage(for photo: Photo) -> CGImage? {
         var image: CGImage?
         self.queue.sync {
-            image = self.cache.object(forKey: photo.identifier as NSString)
+            image = self.cache.object(forKey: photo.identifier as NSString)?.image
         }
         return image
     }
@@ -53,7 +62,7 @@ public final class ImagesInteractor: ImagesUseCase {
                         let image = CGImage(jpegDataProviderSource: dataProvider, decode: nil,
                                             shouldInterpolate: true, intent: .defaultIntent) {
                         result = image
-                        self?.cache.setObject(image, forKey: identifier as NSString)
+                        self?.cache.setObject(ImageHolder(image), forKey: identifier as NSString, cost: data.count)
                     }
                     self?.completionBlocks[identifier]?.forEach({ $0(result) })
                     self?.completionBlocks[identifier] = nil

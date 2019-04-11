@@ -25,7 +25,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="I4n-Hb-Nop"/>
                                 </connections>
                             </searchBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3Z-YO-rVw">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="N3Z-YO-rVw">
                                 <rect key="frame" x="0.0" y="76" width="414" height="660"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Wg9-9F-1q3">
@@ -61,6 +61,7 @@
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="amy-Sh-cHe"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="WY8-4i-EOC"/>
+                                    <outlet property="prefetchDataSource" destination="BYZ-38-t0r" id="C4H-4y-6mL"/>
                                 </connections>
                             </collectionView>
                         </subviews>

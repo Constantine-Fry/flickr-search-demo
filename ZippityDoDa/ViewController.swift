@@ -102,6 +102,19 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
 
 }
 
+extension ViewController: UICollectionViewDataSourcePrefetching {
+
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        indexPaths.forEach { (indexPath) in
+            let photo = self.viewItem!.photos[indexPath.row]
+            if self.presenter?.cachedImage(for: photo) == nil {
+                self.presenter?.loadImage(for: photo, completion: { (_) in })
+            }
+        }
+    }
+    
+}
+
 extension ViewController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
