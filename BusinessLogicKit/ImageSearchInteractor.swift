@@ -16,9 +16,7 @@ public final class ImageSearchInteractor: ImageSearchUseCase {
     }
 
     public func search(query: SearchQuery, completion: @escaping (Result<Page, Error>) -> Void) {
-        self.repository.search(query: query) {
-            completion($0)
-        }
+        self.repository.search(query: query) { completion($0) }
     }
 
 }

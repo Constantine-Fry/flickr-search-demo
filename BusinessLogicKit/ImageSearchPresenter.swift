@@ -19,33 +19,17 @@ public protocol ImagesUseCase {
 
 public protocol ImageSearchPresenting {
     func search(term: String)
-    func cachedImage(for photo: Photo) -> CGImage?
-    func loadImage(for photo: Photo, completion: @escaping (CGImage?) -> Void)
-    func stopLoadImage(for photo: Photo)
     func loadMore(for item: ImageSearchViewItem)
 }
 
-public struct ImageSearchViewItem {
-    public let photos: [Photo]
-    public let hasMore: Bool
-
-    let page: UInt
-    let text: String
+public protocol ImageLoadPresenting {
+    func cachedImage(for photo: Photo) -> CGImage?
+    func loadImage(for photo: Photo, completion: @escaping (CGImage?) -> Void)
+    func stopLoadImage(for photo: Photo)
 }
 
-public enum ImageViewState {
-    case showEmpty
-    case showLoading
-    case presentError(String)
-    case set(ImageSearchViewItem)
-}
 
-public struct SearchQuery {
-    public let text: String
-    public let page: UInt
-}
-
-public final class ImageSearchPresenter: ImageSearchPresenting {
+public final class ImageSearchPresenter {
 
     public weak var view: ImageSearchViewing?
     private let interactor: ImageSearchUseCase
@@ -56,6 +40,10 @@ public final class ImageSearchPresenter: ImageSearchPresenting {
         self.interactor = interactor
         self.imageLoadingInteractor = imageLoadingInteractor
     }
+
+}
+
+extension ImageSearchPresenter: ImageSearchPresenting {
 
     public func search(term: String) {
         self.view?.update(.showLoading)
@@ -78,22 +66,6 @@ public final class ImageSearchPresenter: ImageSearchPresenting {
         }
     }
 
-    public func cachedImage(for photo: Photo) -> CGImage? {
-        return self.imageLoadingInteractor.cachedImage(for: photo)
-    }
-
-    public func loadImage(for photo: Photo, completion: @escaping (CGImage?) -> Void) {
-        self.imageLoadingInteractor.loadImage(for: photo) { image in
-            DispatchQueue.main.async {
-                completion(image)
-            }
-        }
-    }
-
-    public func stopLoadImage(for photo: Photo) {
-        self.imageLoadingInteractor.stopLoadImage(for: photo)
-    }
-
     public func loadMore(for item: ImageSearchViewItem) {
         if !item.hasMore {
             return
@@ -112,6 +84,26 @@ public final class ImageSearchPresenter: ImageSearchPresenting {
                 }
             }
         }
+    }
+
+}
+
+extension ImageSearchPresenter: ImageLoadPresenting {
+
+    public func cachedImage(for photo: Photo) -> CGImage? {
+        return self.imageLoadingInteractor.cachedImage(for: photo)
+    }
+
+    public func loadImage(for photo: Photo, completion: @escaping (CGImage?) -> Void) {
+        self.imageLoadingInteractor.loadImage(for: photo) { image in
+            DispatchQueue.main.async {
+                completion(image)
+            }
+        }
+    }
+
+    public func stopLoadImage(for photo: Photo) {
+        self.imageLoadingInteractor.stopLoadImage(for: photo)
     }
 
 }

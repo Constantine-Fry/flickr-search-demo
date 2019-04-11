@@ -16,7 +16,7 @@ class ViewController: UIViewController, ImageSearchViewing {
 
     private var viewItem: ImageSearchViewItem?
 
-    var presenter: ImageSearchPresenting?
+    var presenter: (ImageSearchPresenting & ImageLoadPresenting)?
 
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
