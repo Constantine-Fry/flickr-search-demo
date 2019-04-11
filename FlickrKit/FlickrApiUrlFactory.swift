@@ -6,11 +6,11 @@
 import Foundation
 import BusinessLogicKit
 
-struct FlickrApiUrlFactory {
+public struct FlickrApiUrlFactory {
 
     private let apiKey: String
 
-    init(apiKey: String) {
+    public init(apiKey: String) {
         self.apiKey = apiKey
     }
 

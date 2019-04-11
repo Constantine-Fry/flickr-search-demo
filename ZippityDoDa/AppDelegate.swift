@@ -7,7 +7,9 @@
 //
 
 import UIKit
+
 import BusinessLogicKit
+import FlickrKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

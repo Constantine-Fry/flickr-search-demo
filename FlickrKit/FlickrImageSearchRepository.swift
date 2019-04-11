@@ -6,14 +6,14 @@
 import Foundation
 import BusinessLogicKit
 
-final class FlickrImageSearchRepository: ImageSearchRepositoring {
+public final class FlickrImageSearchRepository: ImageSearchRepositoring {
 
     private let session: URLSession
     private let requestFactory: FlickrApiUrlFactory
     private let queue: DispatchQueue
     private var searchTask: URLSessionTask?
 
-    init(session: URLSession, requestFactory: FlickrApiUrlFactory, queue: DispatchQueue) {
+    public init(session: URLSession, requestFactory: FlickrApiUrlFactory, queue: DispatchQueue) {
         self.session = session
         self.requestFactory = requestFactory
         self.queue = queue
