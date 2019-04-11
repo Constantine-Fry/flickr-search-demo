@@ -16,25 +16,5 @@ final class ImageCell: UICollectionViewCell {
         super.prepareForReuse()
         self.imageView.image = nil
     }
-
-    override var isSelected: Bool {
-        didSet {
-            if self.isHighlighted {
-                self.imageView.alpha = 0.7
-            } else {
-                self.imageView.alpha = 1.0
-            }
-        }
-    }
-
-    override var isHighlighted: Bool {
-        didSet {
-            if self.isHighlighted {
-                self.imageView.alpha = 0.7
-            } else {
-                self.imageView.alpha = 1.0
-            }
-        }
-    }
     
 }
