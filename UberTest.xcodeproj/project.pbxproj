@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47030CEC2261316800356551 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47030CEB2261316800356551 /* AppDelegate.swift */; };
+		47030CEE2261316800356551 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47030CED2261316800356551 /* ViewController.swift */; };
+		47030CF02261316900356551 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47030CEF2261316900356551 /* Assets.xcassets */; };
+		47030CF32261316900356551 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47030CF12261316900356551 /* Main.storyboard */; };
 		4709C38322611C31003AB09A /* DataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4709C38222611C31003AB09A /* DataTask.swift */; };
 		4709C38522612345003AB09A /* ImageSearchPresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4709C38422612345003AB09A /* ImageSearchPresenterProtocols.swift */; };
 		4709C3A3226126A2003AB09A /* BusinessLogicKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4709C39A226126A2003AB09A /* BusinessLogicKit.framework */; };
@@ -91,6 +95,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		47030CE92261316800356551 /* UberTest-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UberTest-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		47030CEB2261316800356551 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		47030CED2261316800356551 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		47030CEF2261316900356551 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		47030CF22261316900356551 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		47030CF42261316900356551 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47030CF52261316900356551 /* UberTest_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UberTest_macOS.entitlements; sourceTree = "<group>"; };
 		4709C38222611C31003AB09A /* DataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTask.swift; sourceTree = "<group>"; };
 		4709C38422612345003AB09A /* ImageSearchPresenterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchPresenterProtocols.swift; sourceTree = "<group>"; };
 		4709C386226124B3003AB09A /* LoadImagesInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImagesInteractorTests.swift; sourceTree = "<group>"; };
@@ -130,6 +141,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		47030CE62261316800356551 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4709C397226126A2003AB09A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -172,6 +190,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47030CEA2261316800356551 /* UberTest-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				47030CEB2261316800356551 /* AppDelegate.swift */,
+				47030CED2261316800356551 /* ViewController.swift */,
+				47030CEF2261316900356551 /* Assets.xcassets */,
+				47030CF12261316900356551 /* Main.storyboard */,
+				47030CF42261316900356551 /* Info.plist */,
+				47030CF52261316900356551 /* UberTest_macOS.entitlements */,
+			);
+			path = "UberTest-macOS";
+			sourceTree = "<group>";
+		};
 		470BCCBE225FD4D000B4E8CD /* FlickrKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,7 +227,8 @@
 		47BC08D4225A33D60088BD70 = {
 			isa = PBXGroup;
 			children = (
-				47BC08DF225A33D60088BD70 /* UberTest */,
+				47BC08DF225A33D60088BD70 /* UberTest-iOS */,
+				47030CEA2261316800356551 /* UberTest-macOS */,
 				47BC0906225A36000088BD70 /* BusinessLogicKit */,
 				47BC0913225A36000088BD70 /* BusinessLogicKitTests */,
 				470BCCBE225FD4D000B4E8CD /* FlickrKit */,
@@ -213,11 +245,12 @@
 				470BCCBD225FD4D000B4E8CD /* FlickrKit.framework */,
 				4709C39A226126A2003AB09A /* BusinessLogicKit.framework */,
 				4709C3A2226126A2003AB09A /* BusinessLogicKit-macOSTests.xctest */,
+				47030CE92261316800356551 /* UberTest-macOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		47BC08DF225A33D60088BD70 /* UberTest */ = {
+		47BC08DF225A33D60088BD70 /* UberTest-iOS */ = {
 			isa = PBXGroup;
 			children = (
 				47BC08E0225A33D60088BD70 /* AppDelegate.swift */,
@@ -228,7 +261,7 @@
 				47BC08E9225A33D70088BD70 /* LaunchScreen.storyboard */,
 				47BC08EC225A33D70088BD70 /* Info.plist */,
 			);
-			path = UberTest;
+			path = "UberTest-iOS";
 			sourceTree = "<group>";
 		};
 		47BC0906225A36000088BD70 /* BusinessLogicKit */ = {
@@ -299,6 +332,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		47030CE82261316800356551 /* UberTest-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47030CF62261316900356551 /* Build configuration list for PBXNativeTarget "UberTest-macOS" */;
+			buildPhases = (
+				47030CE52261316800356551 /* Sources */,
+				47030CE62261316800356551 /* Frameworks */,
+				47030CE72261316800356551 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UberTest-macOS";
+			productName = "UberTest-macOS";
+			productReference = 47030CE92261316800356551 /* UberTest-macOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 		4709C399226126A2003AB09A /* BusinessLogicKit-macOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4709C3AB226126A2003AB09A /* Build configuration list for PBXNativeTarget "BusinessLogicKit-macOS" */;
@@ -401,6 +451,9 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = lololo;
 				TargetAttributes = {
+					47030CE82261316800356551 = {
+						CreatedOnToolsVersion = 10.2;
+					};
 					4709C399226126A2003AB09A = {
 						CreatedOnToolsVersion = 10.2;
 					};
@@ -433,6 +486,7 @@
 			projectRoot = "";
 			targets = (
 				47BC08DC225A33D60088BD70 /* UberTest-iOS */,
+				47030CE82261316800356551 /* UberTest-macOS */,
 				47BC0904225A36000088BD70 /* BusinessLogicKit */,
 				470BCCBC225FD4D000B4E8CD /* FlickrKit */,
 				4709C399226126A2003AB09A /* BusinessLogicKit-macOS */,
@@ -442,6 +496,15 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		47030CE72261316800356551 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47030CF02261316900356551 /* Assets.xcassets in Resources */,
+				47030CF32261316900356551 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4709C398226126A2003AB09A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -484,6 +547,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		47030CE52261316800356551 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47030CEE2261316800356551 /* ViewController.swift in Sources */,
+				47030CEC2261316800356551 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4709C396226126A2003AB09A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -570,6 +642,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		47030CF12261316900356551 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				47030CF22261316900356551 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		47BC08E4225A33D60088BD70 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -589,6 +669,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		47030CF72261316900356551 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "UberTest-macOS/UberTest_macOS.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "UberTest-macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lolololo.UberTest-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		47030CF82261316900356551 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "UberTest-macOS/UberTest_macOS.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "UberTest-macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lolololo.UberTest-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		4709C3AC226126A2003AB09A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -870,7 +992,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B3QS3H6L8L;
-				INFOPLIST_FILE = UberTest/Info.plist;
+				INFOPLIST_FILE = "UberTest-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -889,7 +1011,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B3QS3H6L8L;
-				INFOPLIST_FILE = UberTest/Info.plist;
+				INFOPLIST_FILE = "UberTest-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -961,6 +1083,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		47030CF62261316900356551 /* Build configuration list for PBXNativeTarget "UberTest-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47030CF72261316900356551 /* Debug */,
+				47030CF82261316900356551 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4709C3AB226126A2003AB09A /* Build configuration list for PBXNativeTarget "BusinessLogicKit-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
