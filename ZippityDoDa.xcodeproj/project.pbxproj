@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4709C38322611C31003AB09A /* DataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4709C38222611C31003AB09A /* DataTask.swift */; };
+		4709C38522612345003AB09A /* ImageSearchPresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4709C38422612345003AB09A /* ImageSearchPresenterProtocols.swift */; };
 		470BCCC1225FD4D000B4E8CD /* FlickrKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 470BCCBF225FD4D000B4E8CD /* FlickrKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		470BCCC4225FD4D000B4E8CD /* FlickrKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470BCCBD225FD4D000B4E8CD /* FlickrKit.framework */; };
 		470BCCC5225FD4D000B4E8CD /* FlickrKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 470BCCBD225FD4D000B4E8CD /* FlickrKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -85,6 +86,7 @@
 
 /* Begin PBXFileReference section */
 		4709C38222611C31003AB09A /* DataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTask.swift; sourceTree = "<group>"; };
+		4709C38422612345003AB09A /* ImageSearchPresenterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchPresenterProtocols.swift; sourceTree = "<group>"; };
 		470BCCBD225FD4D000B4E8CD /* FlickrKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlickrKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		470BCCBF225FD4D000B4E8CD /* FlickrKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrKit.h; sourceTree = "<group>"; };
 		470BCCC0225FD4D000B4E8CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				47BC0925225A36A70088BD70 /* ImageSearchPresenter.swift */,
+				4709C38422612345003AB09A /* ImageSearchPresenterProtocols.swift */,
 				470BCCCF225FD73300B4E8CD /* PresenterStructs.swift */,
 				47BC0923225A36570088BD70 /* ImageSearchInteractor.swift */,
 				47BC097A225CFBB70088BD70 /* ImagesInteractor.swift */,
@@ -456,6 +459,7 @@
 				47BC0941225BDAE70088BD70 /* Page.swift in Sources */,
 				47BC0924225A36570088BD70 /* ImageSearchInteractor.swift in Sources */,
 				470BCD3E2261167000B4E8CD /* ImageDecoder.swift in Sources */,
+				4709C38522612345003AB09A /* ImageSearchPresenterProtocols.swift in Sources */,
 				47BC0943225BDB070088BD70 /* RepositoryError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
