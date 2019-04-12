@@ -14,39 +14,45 @@ public protocol ImagesRepositoring {
     func loadData(_ url: URL, completion: @escaping (Data?) -> Void) -> TaskProtocol
 }
 
+public protocol ImageDecoding {
+    func decode(_ data: Data) -> Image?
+}
+
+public final class Image {
+
+    let image: CGImage
+
+    init(_ image: CGImage) {
+        self.image = image
+    }
+
+}
+
 public final class ImagesInteractor: ImagesUseCase {
 
-    private final class ImageHolder {
-
-        let image: CGImage
-
-        init(_ image: CGImage) {
-            self.image = image
-        }
-
-    }
-
-    private let cache = NSCache<NSString, ImageHolder>()
+    private let cache = NSCache<NSString, Image>()
     private var tasks = [String: TaskProtocol]()
     private let repository: ImagesRepositoring
+    private let decoder: ImageDecoding
     private let queue: DispatchQueue
-    private var completionBlocks = [String: [(CGImage?) -> Void]]()
+    private var completionBlocks = [String: [(Image?) -> Void]]()
 
-    public init(repository: ImagesRepositoring, queue: DispatchQueue) {
-        self.cache.totalCostLimit = 60*1024*1024
+    public init(repository: ImagesRepositoring, decoder: ImageDecoding, cacheLimit: Int, queue: DispatchQueue) {
+        self.cache.totalCostLimit = cacheLimit
         self.repository = repository
         self.queue = queue
+        self.decoder = decoder
     }
 
-    public func cachedImage(for photo: Photo) -> CGImage? {
-        var image: CGImage?
+    public func cachedImage(for photo: Photo) -> Image? {
+        var image: Image?
         self.queue.sync {
-            image = self.cache.object(forKey: photo.identifier as NSString)?.image
+            image = self.cache.object(forKey: photo.identifier as NSString)
         }
         return image
     }
 
-    public func loadImage(for photo: Photo, completion: @escaping (CGImage?) -> Void) {
+    public func loadImage(for photo: Photo, completion: @escaping (Image?) -> Void) {
         let identifier = photo.identifier
         self.queue.async {
 
@@ -56,14 +62,12 @@ public final class ImagesInteractor: ImagesUseCase {
 
             let task = self.repository.loadData(photo.url) { [weak self] (data) in
                 self?.queue.async {
-                    self?.tasks[identifier] = nil
-                    var result: CGImage?
-                    if let data = data, let dataProvider = CGDataProvider(data: data as CFData),
-                        let image = CGImage(jpegDataProviderSource: dataProvider, decode: nil,
-                                            shouldInterpolate: true, intent: .defaultIntent) {
+                    var result: Image?
+                    if let data = data, let image = self?.decoder.decode(data) {
+                        self?.cache.setObject(image, forKey: identifier as NSString, cost: data.count)
                         result = image
-                        self?.cache.setObject(ImageHolder(image), forKey: identifier as NSString, cost: data.count)
                     }
+                    self?.tasks[identifier] = nil
                     self?.completionBlocks[identifier]?.forEach({ $0(result) })
                     self?.completionBlocks[identifier] = nil
                 }

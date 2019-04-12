@@ -35,6 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let presenter = ImageSearchPresenter(interactor: ImageSearchInteractor(repository: searchRepository),
                                              imageLoadingInteractor:
             ImagesInteractor(repository: loadingRepository,
+                             decoder: DefaultCGImageDecoder(),
+                             cacheLimit: 60*1024*1024,
                              queue: DispatchQueue(label: "com.app.images-interactor.queue")))
         let viewController = self.window?.rootViewController as! ViewController
         presenter.view = viewController

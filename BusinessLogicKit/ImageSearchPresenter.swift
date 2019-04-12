@@ -12,8 +12,8 @@ public protocol ImageSearchUseCase {
 }
 
 public protocol ImagesUseCase {
-    func cachedImage(for photo: Photo) -> CGImage?
-    func loadImage(for photo: Photo, completion: @escaping (CGImage?) -> Void)
+    func cachedImage(for photo: Photo) -> Image?
+    func loadImage(for photo: Photo, completion: @escaping (Image?) -> Void)
     func stopLoadImage(for photo: Photo)
 }
 
@@ -91,13 +91,13 @@ extension ImageSearchPresenter: ImageSearchPresenting {
 extension ImageSearchPresenter: ImageLoadPresenting {
 
     public func cachedImage(for photo: Photo) -> CGImage? {
-        return self.imageLoadingInteractor.cachedImage(for: photo)
+        return self.imageLoadingInteractor.cachedImage(for: photo)?.image
     }
 
     public func loadImage(for photo: Photo, completion: @escaping (CGImage?) -> Void) {
         self.imageLoadingInteractor.loadImage(for: photo) { image in
             DispatchQueue.main.async {
-                completion(image)
+                completion(image?.image)
             }
         }
     }
