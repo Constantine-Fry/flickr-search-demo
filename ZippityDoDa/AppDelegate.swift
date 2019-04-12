@@ -32,12 +32,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             requestFactory: FlickrApiUrlFactory(apiKey: String(bytes: keyData, encoding: .utf8)!),
             queue: DispatchQueue(label: "com.app.flickr-repository.queue"))
         let loadingRepository = ImageRepository(session: session)
+        let loadingInteractor = LoadImagesInteractor(repository: loadingRepository,
+                                                 decoder: DefaultJPEGImageDecoder(),
+                                                 cacheLimit: 60*1024*1024)
         let presenter = ImageSearchPresenter(interactor: ImageSearchInteractor(repository: searchRepository),
-                                             imageLoadingInteractor:
-            ImagesInteractor(repository: loadingRepository,
-                             decoder: DefaultCGImageDecoder(),
-                             cacheLimit: 60*1024*1024,
-                             queue: DispatchQueue(label: "com.app.images-interactor.queue")))
+                                             imageLoadingInteractor: loadingInteractor)
         let viewController = self.window?.rootViewController as! ViewController
         presenter.view = viewController
         viewController.presenter = presenter

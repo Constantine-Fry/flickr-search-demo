@@ -3,6 +3,8 @@
 //  Copyright © 2019 lololo. All rights reserved.
 //
 
+import Foundation
+
 public final class ImageSearchPresenter {
 
     public weak var view: ImageSearchViewing?

@@ -9,6 +9,21 @@
 /* Begin PBXBuildFile section */
 		4709C38322611C31003AB09A /* DataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4709C38222611C31003AB09A /* DataTask.swift */; };
 		4709C38522612345003AB09A /* ImageSearchPresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4709C38422612345003AB09A /* ImageSearchPresenterProtocols.swift */; };
+		4709C3A3226126A2003AB09A /* BusinessLogicKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4709C39A226126A2003AB09A /* BusinessLogicKit.framework */; };
+		4709C3B1226126B8003AB09A /* LoadImagesInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4709C386226124B3003AB09A /* LoadImagesInteractorTests.swift */; };
+		4709C3B2226126BB003AB09A /* BusinessLogicKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC0914225A36000088BD70 /* BusinessLogicKitTests.swift */; };
+		4709C3B3226126C8003AB09A /* ImageSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC0925225A36A70088BD70 /* ImageSearchPresenter.swift */; };
+		4709C3B4226126C8003AB09A /* ImageSearchPresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4709C38422612345003AB09A /* ImageSearchPresenterProtocols.swift */; };
+		4709C3B5226126C8003AB09A /* PresenterStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470BCCCF225FD73300B4E8CD /* PresenterStructs.swift */; };
+		4709C3B6226126C8003AB09A /* ImageSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC0923225A36570088BD70 /* ImageSearchInteractor.swift */; };
+		4709C3B7226126C8003AB09A /* LoadImagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC097A225CFBB70088BD70 /* LoadImagesInteractor.swift */; };
+		4709C3B8226126C8003AB09A /* DefaultJPEGImageDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470BCD3D2261167000B4E8CD /* DefaultJPEGImageDecoder.swift */; };
+		4709C3B9226126CB003AB09A /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC093E225BDAD10088BD70 /* Photo.swift */; };
+		4709C3BA226126CB003AB09A /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC0940225BDAE70088BD70 /* Page.swift */; };
+		4709C3BB226126CB003AB09A /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC0942225BDB070088BD70 /* RepositoryError.swift */; };
+		4709C3BD22612AB2003AB09A /* download.png in Resources */ = {isa = PBXBuildFile; fileRef = 4709C3BC22612AB2003AB09A /* download.png */; };
+		4709C3BF22612E6D003AB09A /* MockImagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4709C3BE22612E6D003AB09A /* MockImagesRepository.swift */; };
+		4709C3C122612E82003AB09A /* MockImageDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4709C3C022612E82003AB09A /* MockImageDecoder.swift */; };
 		470BCCC1225FD4D000B4E8CD /* FlickrKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 470BCCBF225FD4D000B4E8CD /* FlickrKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		470BCCC4225FD4D000B4E8CD /* FlickrKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470BCCBD225FD4D000B4E8CD /* FlickrKit.framework */; };
 		470BCCC5225FD4D000B4E8CD /* FlickrKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 470BCCBD225FD4D000B4E8CD /* FlickrKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -18,14 +33,12 @@
 		470BCCCC225FD4F200B4E8CD /* FlickrImageSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC0927225A379C0088BD70 /* FlickrImageSearchRepository.swift */; };
 		470BCCCE225FD5AF00B4E8CD /* BusinessLogicKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47BC0905225A36000088BD70 /* BusinessLogicKit.framework */; };
 		470BCCD0225FD73300B4E8CD /* PresenterStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470BCCCF225FD73300B4E8CD /* PresenterStructs.swift */; };
-		470BCD3E2261167000B4E8CD /* ImageDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470BCD3D2261167000B4E8CD /* ImageDecoder.swift */; };
+		470BCD3E2261167000B4E8CD /* DefaultJPEGImageDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470BCD3D2261167000B4E8CD /* DefaultJPEGImageDecoder.swift */; };
 		47BC08E1225A33D60088BD70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC08E0225A33D60088BD70 /* AppDelegate.swift */; };
 		47BC08E3225A33D60088BD70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC08E2225A33D60088BD70 /* ViewController.swift */; };
 		47BC08E6225A33D60088BD70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47BC08E4225A33D60088BD70 /* Main.storyboard */; };
 		47BC08E8225A33D70088BD70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47BC08E7225A33D70088BD70 /* Assets.xcassets */; };
 		47BC08EB225A33D70088BD70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47BC08E9225A33D70088BD70 /* LaunchScreen.storyboard */; };
-		47BC090E225A36000088BD70 /* BusinessLogicKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47BC0905225A36000088BD70 /* BusinessLogicKit.framework */; };
-		47BC0915225A36000088BD70 /* BusinessLogicKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC0914225A36000088BD70 /* BusinessLogicKitTests.swift */; };
 		47BC0917225A36000088BD70 /* BusinessLogicKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 47BC0907225A36000088BD70 /* BusinessLogicKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		47BC091A225A36000088BD70 /* BusinessLogicKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47BC0905225A36000088BD70 /* BusinessLogicKit.framework */; };
 		47BC091B225A36000088BD70 /* BusinessLogicKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 47BC0905225A36000088BD70 /* BusinessLogicKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -34,31 +47,24 @@
 		47BC093F225BDAD10088BD70 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC093E225BDAD10088BD70 /* Photo.swift */; };
 		47BC0941225BDAE70088BD70 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC0940225BDAE70088BD70 /* Page.swift */; };
 		47BC0943225BDB070088BD70 /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC0942225BDB070088BD70 /* RepositoryError.swift */; };
-		47BC097B225CFBB70088BD70 /* ImagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC097A225CFBB70088BD70 /* ImagesInteractor.swift */; };
+		47BC097B225CFBB70088BD70 /* LoadImagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC097A225CFBB70088BD70 /* LoadImagesInteractor.swift */; };
 		47BC097F225D092D0088BD70 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC097E225D092D0088BD70 /* ImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4709C3A4226126A2003AB09A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47BC08D5225A33D60088BD70 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4709C399226126A2003AB09A;
+			remoteInfo = "BusinessLogicKit-macOS";
+		};
 		470BCCC2225FD4D000B4E8CD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 47BC08D5225A33D60088BD70 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 470BCCBC225FD4D000B4E8CD;
 			remoteInfo = FlickrKit;
-		};
-		47BC090F225A36000088BD70 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 47BC08D5225A33D60088BD70 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 47BC0904225A36000088BD70;
-			remoteInfo = BusinessLogicKit;
-		};
-		47BC0911225A36000088BD70 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 47BC08D5225A33D60088BD70 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 47BC08DC225A33D60088BD70;
-			remoteInfo = ZippityDoDa;
 		};
 		47BC0918225A36000088BD70 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -87,11 +93,17 @@
 /* Begin PBXFileReference section */
 		4709C38222611C31003AB09A /* DataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTask.swift; sourceTree = "<group>"; };
 		4709C38422612345003AB09A /* ImageSearchPresenterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchPresenterProtocols.swift; sourceTree = "<group>"; };
+		4709C386226124B3003AB09A /* LoadImagesInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImagesInteractorTests.swift; sourceTree = "<group>"; };
+		4709C39A226126A2003AB09A /* BusinessLogicKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BusinessLogicKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4709C3A2226126A2003AB09A /* BusinessLogicKit-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BusinessLogicKit-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4709C3BC22612AB2003AB09A /* download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = download.png; path = ../../../../Downloads/download.png; sourceTree = "<group>"; };
+		4709C3BE22612E6D003AB09A /* MockImagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImagesRepository.swift; sourceTree = "<group>"; };
+		4709C3C022612E82003AB09A /* MockImageDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageDecoder.swift; sourceTree = "<group>"; };
 		470BCCBD225FD4D000B4E8CD /* FlickrKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlickrKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		470BCCBF225FD4D000B4E8CD /* FlickrKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrKit.h; sourceTree = "<group>"; };
 		470BCCC0225FD4D000B4E8CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		470BCCCF225FD73300B4E8CD /* PresenterStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterStructs.swift; sourceTree = "<group>"; };
-		470BCD3D2261167000B4E8CD /* ImageDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDecoder.swift; sourceTree = "<group>"; };
+		470BCD3D2261167000B4E8CD /* DefaultJPEGImageDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultJPEGImageDecoder.swift; sourceTree = "<group>"; };
 		47BC08DD225A33D60088BD70 /* ZippityDoDa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZippityDoDa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47BC08E0225A33D60088BD70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47BC08E2225A33D60088BD70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +114,6 @@
 		47BC0905225A36000088BD70 /* BusinessLogicKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BusinessLogicKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47BC0907225A36000088BD70 /* BusinessLogicKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BusinessLogicKit.h; sourceTree = "<group>"; };
 		47BC0908225A36000088BD70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		47BC090D225A36000088BD70 /* BusinessLogicKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusinessLogicKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47BC0914225A36000088BD70 /* BusinessLogicKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessLogicKitTests.swift; sourceTree = "<group>"; };
 		47BC0916225A36000088BD70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47BC0923225A36570088BD70 /* ImageSearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchInteractor.swift; sourceTree = "<group>"; };
@@ -113,12 +124,27 @@
 		47BC093E225BDAD10088BD70 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		47BC0940225BDAE70088BD70 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		47BC0942225BDB070088BD70 /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
-		47BC097A225CFBB70088BD70 /* ImagesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesInteractor.swift; sourceTree = "<group>"; };
+		47BC097A225CFBB70088BD70 /* LoadImagesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImagesInteractor.swift; sourceTree = "<group>"; };
 		47BC097C225D055E0088BD70 /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
 		47BC097E225D092D0088BD70 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4709C397226126A2003AB09A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4709C39F226126A2003AB09A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4709C3A3226126A2003AB09A /* BusinessLogicKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		470BCCBA225FD4D000B4E8CD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -140,14 +166,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		47BC090A225A36000088BD70 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				47BC090E225A36000088BD70 /* BusinessLogicKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,8 +210,9 @@
 			children = (
 				47BC08DD225A33D60088BD70 /* ZippityDoDa.app */,
 				47BC0905225A36000088BD70 /* BusinessLogicKit.framework */,
-				47BC090D225A36000088BD70 /* BusinessLogicKitTests.xctest */,
 				470BCCBD225FD4D000B4E8CD /* FlickrKit.framework */,
+				4709C39A226126A2003AB09A /* BusinessLogicKit.framework */,
+				4709C3A2226126A2003AB09A /* BusinessLogicKit-macOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -219,8 +238,8 @@
 				4709C38422612345003AB09A /* ImageSearchPresenterProtocols.swift */,
 				470BCCCF225FD73300B4E8CD /* PresenterStructs.swift */,
 				47BC0923225A36570088BD70 /* ImageSearchInteractor.swift */,
-				47BC097A225CFBB70088BD70 /* ImagesInteractor.swift */,
-				470BCD3D2261167000B4E8CD /* ImageDecoder.swift */,
+				47BC097A225CFBB70088BD70 /* LoadImagesInteractor.swift */,
+				470BCD3D2261167000B4E8CD /* DefaultJPEGImageDecoder.swift */,
 				47BC093D225BDAC50088BD70 /* Models */,
 				47BC0907225A36000088BD70 /* BusinessLogicKit.h */,
 				47BC0908225A36000088BD70 /* Info.plist */,
@@ -231,7 +250,11 @@
 		47BC0913225A36000088BD70 /* BusinessLogicKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				4709C3BC22612AB2003AB09A /* download.png */,
 				47BC0914225A36000088BD70 /* BusinessLogicKitTests.swift */,
+				4709C386226124B3003AB09A /* LoadImagesInteractorTests.swift */,
+				4709C3BE22612E6D003AB09A /* MockImagesRepository.swift */,
+				4709C3C022612E82003AB09A /* MockImageDecoder.swift */,
 				47BC0916225A36000088BD70 /* Info.plist */,
 			);
 			path = BusinessLogicKitTests;
@@ -250,6 +273,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		4709C395226126A2003AB09A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		470BCCB8225FD4D000B4E8CD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -269,6 +299,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		4709C399226126A2003AB09A /* BusinessLogicKit-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4709C3AB226126A2003AB09A /* Build configuration list for PBXNativeTarget "BusinessLogicKit-macOS" */;
+			buildPhases = (
+				4709C395226126A2003AB09A /* Headers */,
+				4709C396226126A2003AB09A /* Sources */,
+				4709C397226126A2003AB09A /* Frameworks */,
+				4709C398226126A2003AB09A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BusinessLogicKit-macOS";
+			productName = "BusinessLogicKit-macOS";
+			productReference = 4709C39A226126A2003AB09A /* BusinessLogicKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4709C3A1226126A2003AB09A /* BusinessLogicKit-macOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4709C3AE226126A2003AB09A /* Build configuration list for PBXNativeTarget "BusinessLogicKit-macOSTests" */;
+			buildPhases = (
+				4709C39E226126A2003AB09A /* Sources */,
+				4709C39F226126A2003AB09A /* Frameworks */,
+				4709C3A0226126A2003AB09A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4709C3A5226126A2003AB09A /* PBXTargetDependency */,
+			);
+			name = "BusinessLogicKit-macOSTests";
+			productName = "BusinessLogicKit-macOSTests";
+			productReference = 4709C3A2226126A2003AB09A /* BusinessLogicKit-macOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		470BCCBC225FD4D000B4E8CD /* FlickrKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 470BCCC6225FD4D000B4E8CD /* Build configuration list for PBXNativeTarget "FlickrKit" */;
@@ -325,25 +391,6 @@
 			productReference = 47BC0905225A36000088BD70 /* BusinessLogicKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		47BC090C225A36000088BD70 /* BusinessLogicKitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 47BC0920225A36000088BD70 /* Build configuration list for PBXNativeTarget "BusinessLogicKitTests" */;
-			buildPhases = (
-				47BC0909225A36000088BD70 /* Sources */,
-				47BC090A225A36000088BD70 /* Frameworks */,
-				47BC090B225A36000088BD70 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				47BC0910225A36000088BD70 /* PBXTargetDependency */,
-				47BC0912225A36000088BD70 /* PBXTargetDependency */,
-			);
-			name = BusinessLogicKitTests;
-			productName = BusinessLogicKitTests;
-			productReference = 47BC090D225A36000088BD70 /* BusinessLogicKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -354,6 +401,12 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = lololo;
 				TargetAttributes = {
+					4709C399226126A2003AB09A = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					4709C3A1226126A2003AB09A = {
+						CreatedOnToolsVersion = 10.2;
+					};
 					470BCCBC225FD4D000B4E8CD = {
 						CreatedOnToolsVersion = 10.2;
 					};
@@ -363,10 +416,6 @@
 					47BC0904225A36000088BD70 = {
 						CreatedOnToolsVersion = 10.2;
 						LastSwiftMigration = 1020;
-					};
-					47BC090C225A36000088BD70 = {
-						CreatedOnToolsVersion = 10.2;
-						TestTargetID = 47BC08DC225A33D60088BD70;
 					};
 				};
 			};
@@ -385,13 +434,29 @@
 			targets = (
 				47BC08DC225A33D60088BD70 /* ZippityDoDa */,
 				47BC0904225A36000088BD70 /* BusinessLogicKit */,
-				47BC090C225A36000088BD70 /* BusinessLogicKitTests */,
 				470BCCBC225FD4D000B4E8CD /* FlickrKit */,
+				4709C399226126A2003AB09A /* BusinessLogicKit-macOS */,
+				4709C3A1226126A2003AB09A /* BusinessLogicKit-macOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4709C398226126A2003AB09A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4709C3A0226126A2003AB09A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4709C3BD22612AB2003AB09A /* download.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		470BCCBB225FD4D000B4E8CD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -416,16 +481,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		47BC090B225A36000088BD70 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4709C396226126A2003AB09A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4709C3B9226126CB003AB09A /* Photo.swift in Sources */,
+				4709C3B4226126C8003AB09A /* ImageSearchPresenterProtocols.swift in Sources */,
+				4709C3BA226126CB003AB09A /* Page.swift in Sources */,
+				4709C3B7226126C8003AB09A /* LoadImagesInteractor.swift in Sources */,
+				4709C3B8226126C8003AB09A /* DefaultJPEGImageDecoder.swift in Sources */,
+				4709C3B5226126C8003AB09A /* PresenterStructs.swift in Sources */,
+				4709C3B6226126C8003AB09A /* ImageSearchInteractor.swift in Sources */,
+				4709C3B3226126C8003AB09A /* ImageSearchPresenter.swift in Sources */,
+				4709C3BB226126CB003AB09A /* RepositoryError.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4709C39E226126A2003AB09A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4709C3C122612E82003AB09A /* MockImageDecoder.swift in Sources */,
+				4709C3BF22612E6D003AB09A /* MockImagesRepository.swift in Sources */,
+				4709C3B1226126B8003AB09A /* LoadImagesInteractorTests.swift in Sources */,
+				4709C3B2226126BB003AB09A /* BusinessLogicKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		470BCCB9225FD4D000B4E8CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -455,40 +540,27 @@
 				47BC093F225BDAD10088BD70 /* Photo.swift in Sources */,
 				470BCCD0225FD73300B4E8CD /* PresenterStructs.swift in Sources */,
 				47BC0926225A36A70088BD70 /* ImageSearchPresenter.swift in Sources */,
-				47BC097B225CFBB70088BD70 /* ImagesInteractor.swift in Sources */,
+				47BC097B225CFBB70088BD70 /* LoadImagesInteractor.swift in Sources */,
 				47BC0941225BDAE70088BD70 /* Page.swift in Sources */,
 				47BC0924225A36570088BD70 /* ImageSearchInteractor.swift in Sources */,
-				470BCD3E2261167000B4E8CD /* ImageDecoder.swift in Sources */,
+				470BCD3E2261167000B4E8CD /* DefaultJPEGImageDecoder.swift in Sources */,
 				4709C38522612345003AB09A /* ImageSearchPresenterProtocols.swift in Sources */,
 				47BC0943225BDB070088BD70 /* RepositoryError.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		47BC0909225A36000088BD70 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				47BC0915225A36000088BD70 /* BusinessLogicKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4709C3A5226126A2003AB09A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4709C399226126A2003AB09A /* BusinessLogicKit-macOS */;
+			targetProxy = 4709C3A4226126A2003AB09A /* PBXContainerItemProxy */;
+		};
 		470BCCC3225FD4D000B4E8CD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 470BCCBC225FD4D000B4E8CD /* FlickrKit */;
 			targetProxy = 470BCCC2225FD4D000B4E8CD /* PBXContainerItemProxy */;
-		};
-		47BC0910225A36000088BD70 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 47BC0904225A36000088BD70 /* BusinessLogicKit */;
-			targetProxy = 47BC090F225A36000088BD70 /* PBXContainerItemProxy */;
-		};
-		47BC0912225A36000088BD70 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 47BC08DC225A33D60088BD70 /* ZippityDoDa */;
-			targetProxy = 47BC0911225A36000088BD70 /* PBXContainerItemProxy */;
 		};
 		47BC0919225A36000088BD70 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -517,6 +589,108 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4709C3AC226126A2003AB09A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = BusinessLogicKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lolololo.BusinessLogicKit-macOS";
+				PRODUCT_NAME = BusinessLogicKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4709C3AD226126A2003AB09A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = BusinessLogicKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lolololo.BusinessLogicKit-macOS";
+				PRODUCT_NAME = BusinessLogicKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4709C3AF226126A2003AB09A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BusinessLogicKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lolololo.BusinessLogicKit-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		4709C3B0226126A2003AB09A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BusinessLogicKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lolololo.BusinessLogicKit-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		470BCCC7225FD4D000B4E8CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -784,47 +958,27 @@
 			};
 			name = Release;
 		};
-		47BC0921225A36000088BD70 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = BusinessLogicKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lolololo.BusinessLogicKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZippityDoDa.app/ZippityDoDa";
-			};
-			name = Debug;
-		};
-		47BC0922225A36000088BD70 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = BusinessLogicKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lolololo.BusinessLogicKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZippityDoDa.app/ZippityDoDa";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4709C3AB226126A2003AB09A /* Build configuration list for PBXNativeTarget "BusinessLogicKit-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4709C3AC226126A2003AB09A /* Debug */,
+				4709C3AD226126A2003AB09A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4709C3AE226126A2003AB09A /* Build configuration list for PBXNativeTarget "BusinessLogicKit-macOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4709C3AF226126A2003AB09A /* Debug */,
+				4709C3B0226126A2003AB09A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		470BCCC6225FD4D000B4E8CD /* Build configuration list for PBXNativeTarget "FlickrKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -857,15 +1011,6 @@
 			buildConfigurations = (
 				47BC091D225A36000088BD70 /* Debug */,
 				47BC091E225A36000088BD70 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		47BC0920225A36000088BD70 /* Build configuration list for PBXNativeTarget "BusinessLogicKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				47BC0921225A36000088BD70 /* Debug */,
-				47BC0922225A36000088BD70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -3,6 +3,8 @@
 //  Copyright © 2019 lololo. All rights reserved.
 //
 
+import Foundation
+
 public struct Photo {
 
     public let identifier: String

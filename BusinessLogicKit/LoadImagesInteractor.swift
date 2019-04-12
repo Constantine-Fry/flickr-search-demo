@@ -29,7 +29,7 @@ public final class Image {
 
 }
 
-public final class ImagesInteractor: ImagesUseCase {
+public final class LoadImagesInteractor: ImagesUseCase {
 
     private let cache = NSCache<NSString, Image>()
     private var tasks = [NSString: TaskProtocol]()
@@ -38,10 +38,10 @@ public final class ImagesInteractor: ImagesUseCase {
     private let queue: DispatchQueue
     private var completionBlocks = [String: [(Image?) -> Void]]()
 
-    public init(repository: ImagesRepositoring, decoder: ImageDecoding, cacheLimit: Int, queue: DispatchQueue) {
+    public init(repository: ImagesRepositoring, decoder: ImageDecoding, cacheLimit: Int) {
         self.cache.totalCostLimit = cacheLimit
         self.repository = repository
-        self.queue = queue
+        self.queue = DispatchQueue(label: "com.app.images-interactor.queue.internal")
         self.decoder = decoder
     }
 

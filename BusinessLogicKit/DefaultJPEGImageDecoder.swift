@@ -4,7 +4,7 @@
 //
 import Foundation
 
-public final class DefaultCGImageDecoder: ImageDecoding {
+public final class DefaultJPEGImageDecoder: ImageDecoding {
 
     public init() {}
 
