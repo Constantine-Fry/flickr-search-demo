@@ -5,8 +5,6 @@
 
 import BusinessLogicKit
 
-extension URLSessionTask: TaskProtocol { }
-
 public final class ImageRepository: ImagesRepositoring {
 
     private let session: URLSession
@@ -15,13 +13,16 @@ public final class ImageRepository: ImagesRepositoring {
         self.session = session
     }
 
-    public func loadData(_ url: URL, completion: @escaping (Data?) -> Void) -> TaskProtocol {
-        return self.session.dataTask(with: url) { data, _, error in
+    public func loadData(_ url: URL) -> TaskProtocol {
+        let task = DataTask()
+        task.task = self.session.dataTask(with: url) { [weak task] data, _, error in
             if let error = error as? URLError, error.code == .cancelled {
                 return
             }
-            completion(data)
+            task?.completions.forEach({ $0(data )})
+            task?.completions = []
         }
+        return task
     }
 
 }

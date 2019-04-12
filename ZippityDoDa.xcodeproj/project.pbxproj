@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4709C38322611C31003AB09A /* DataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4709C38222611C31003AB09A /* DataTask.swift */; };
 		470BCCC1225FD4D000B4E8CD /* FlickrKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 470BCCBF225FD4D000B4E8CD /* FlickrKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		470BCCC4225FD4D000B4E8CD /* FlickrKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470BCCBD225FD4D000B4E8CD /* FlickrKit.framework */; };
 		470BCCC5225FD4D000B4E8CD /* FlickrKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 470BCCBD225FD4D000B4E8CD /* FlickrKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -83,6 +84,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4709C38222611C31003AB09A /* DataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTask.swift; sourceTree = "<group>"; };
 		470BCCBD225FD4D000B4E8CD /* FlickrKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlickrKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		470BCCBF225FD4D000B4E8CD /* FlickrKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrKit.h; sourceTree = "<group>"; };
 		470BCCC0225FD4D000B4E8CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				47BC093B225BD6470088BD70 /* PhotoResponseDto.swift */,
 				47BC0939225BD0470088BD70 /* FlickrApiUrlFactory.swift */,
 				47BC097C225D055E0088BD70 /* ImageRepository.swift */,
+				4709C38222611C31003AB09A /* DataTask.swift */,
 				470BCCBF225FD4D000B4E8CD /* FlickrKit.h */,
 				470BCCC0225FD4D000B4E8CD /* Info.plist */,
 			);
@@ -425,6 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				470BCCCC225FD4F200B4E8CD /* FlickrImageSearchRepository.swift in Sources */,
+				4709C38322611C31003AB09A /* DataTask.swift in Sources */,
 				470BCCCA225FD4F200B4E8CD /* FlickrApiUrlFactory.swift in Sources */,
 				470BCCC9225FD4F200B4E8CD /* ImageRepository.swift in Sources */,
 				470BCCCB225FD4F200B4E8CD /* PhotoResponseDto.swift in Sources */,

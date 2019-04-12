@@ -5,13 +5,14 @@
 
 import Foundation
 
-public protocol TaskProtocol {
+public protocol TaskProtocol: class {
+    var completions: [(Data?) -> Void] { get set }
     func resume()
     func cancel()
 }
 
 public protocol ImagesRepositoring {
-    func loadData(_ url: URL, completion: @escaping (Data?) -> Void) -> TaskProtocol
+    func loadData(_ url: URL) -> TaskProtocol
 }
 
 public protocol ImageDecoding {
@@ -31,7 +32,7 @@ public final class Image {
 public final class ImagesInteractor: ImagesUseCase {
 
     private let cache = NSCache<NSString, Image>()
-    private var tasks = [String: TaskProtocol]()
+    private var tasks = [NSString: TaskProtocol]()
     private let repository: ImagesRepositoring
     private let decoder: ImageDecoding
     private let queue: DispatchQueue
@@ -53,26 +54,20 @@ public final class ImagesInteractor: ImagesUseCase {
     }
 
     public func loadImage(for photo: Photo, completion: @escaping (Image?) -> Void) {
-        let identifier = photo.identifier
+        let identifier = photo.identifier as NSString
         self.queue.async {
-
-            var blocks = self.completionBlocks[identifier] ?? []
-            blocks.append(completion)
-            self.completionBlocks[identifier] = blocks
-
-            let task = self.repository.loadData(photo.url) { [weak self] (data) in
+            let task = self.tasks[identifier] ?? self.repository.loadData(photo.url)
+            task.completions.append({ [weak self] (data) in
                 self?.queue.async {
                     var result: Image?
-                    if let data = data, let image = self?.decoder.decode(data) {
-                        self?.cache.setObject(image, forKey: identifier as NSString, cost: data.count)
+                    if let data = data, let image = self?.cache.object(forKey: identifier) ?? self?.decoder.decode(data) {
+                        self?.cache.setObject(image, forKey: identifier, cost: data.count)
                         result = image
                     }
+                    completion(result)
                     self?.tasks[identifier] = nil
-                    self?.completionBlocks[identifier]?.forEach({ $0(result) })
-                    self?.completionBlocks[identifier] = nil
                 }
-            }
-            
+            })
             self.tasks[identifier] = task
             task.resume()
         }
@@ -80,10 +75,9 @@ public final class ImagesInteractor: ImagesUseCase {
 
     public func stopLoadImage(for photo: Photo) {
         self.queue.sync {
-            self.tasks[photo.identifier]?.cancel()
-            self.tasks[photo.identifier] = nil
-            self.completionBlocks[photo.identifier] = nil
+            self.tasks.removeValue(forKey: photo.identifier as NSString)?.cancel()
         }
     }
 
 }
+
