@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "47BC08DC225A33D60088BD70"
-               BuildableName = "ZippityDoDa.app"
-               BlueprintName = "ZippityDoDa"
-               ReferencedContainer = "container:ZippityDoDa.xcodeproj">
+               BlueprintIdentifier = "4709C399226126A2003AB09A"
+               BuildableName = "BusinessLogicKit.framework"
+               BlueprintName = "BusinessLogicKit-macOS"
+               ReferencedContainer = "container:UberTest.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,17 +35,17 @@
                BlueprintIdentifier = "4709C3A1226126A2003AB09A"
                BuildableName = "BusinessLogicKit-macOSTests.xctest"
                BlueprintName = "BusinessLogicKit-macOSTests"
-               ReferencedContainer = "container:ZippityDoDa.xcodeproj">
+               ReferencedContainer = "container:UberTest.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "47BC08DC225A33D60088BD70"
-            BuildableName = "ZippityDoDa.app"
-            BlueprintName = "ZippityDoDa"
-            ReferencedContainer = "container:ZippityDoDa.xcodeproj">
+            BlueprintIdentifier = "4709C399226126A2003AB09A"
+            BuildableName = "BusinessLogicKit.framework"
+            BlueprintName = "BusinessLogicKit-macOS"
+            ReferencedContainer = "container:UberTest.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -61,16 +61,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "47BC08DC225A33D60088BD70"
-            BuildableName = "ZippityDoDa.app"
-            BlueprintName = "ZippityDoDa"
-            ReferencedContainer = "container:ZippityDoDa.xcodeproj">
+            BlueprintIdentifier = "4709C399226126A2003AB09A"
+            BuildableName = "BusinessLogicKit.framework"
+            BlueprintName = "BusinessLogicKit-macOS"
+            ReferencedContainer = "container:UberTest.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -80,16 +79,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "47BC08DC225A33D60088BD70"
-            BuildableName = "ZippityDoDa.app"
-            BlueprintName = "ZippityDoDa"
-            ReferencedContainer = "container:ZippityDoDa.xcodeproj">
+            BlueprintIdentifier = "4709C399226126A2003AB09A"
+            BuildableName = "BusinessLogicKit.framework"
+            BlueprintName = "BusinessLogicKit-macOS"
+            ReferencedContainer = "container:UberTest.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

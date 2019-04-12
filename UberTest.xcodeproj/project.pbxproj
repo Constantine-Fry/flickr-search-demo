@@ -104,7 +104,7 @@
 		470BCCC0225FD4D000B4E8CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		470BCCCF225FD73300B4E8CD /* PresenterStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterStructs.swift; sourceTree = "<group>"; };
 		470BCD3D2261167000B4E8CD /* DefaultJPEGImageDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultJPEGImageDecoder.swift; sourceTree = "<group>"; };
-		47BC08DD225A33D60088BD70 /* ZippityDoDa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZippityDoDa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		47BC08DD225A33D60088BD70 /* UberTest-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UberTest-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47BC08E0225A33D60088BD70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47BC08E2225A33D60088BD70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		47BC08E5225A33D60088BD70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 		47BC08D4225A33D60088BD70 = {
 			isa = PBXGroup;
 			children = (
-				47BC08DF225A33D60088BD70 /* ZippityDoDa */,
+				47BC08DF225A33D60088BD70 /* UberTest */,
 				47BC0906225A36000088BD70 /* BusinessLogicKit */,
 				47BC0913225A36000088BD70 /* BusinessLogicKitTests */,
 				470BCCBE225FD4D000B4E8CD /* FlickrKit */,
@@ -208,7 +208,7 @@
 		47BC08DE225A33D60088BD70 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				47BC08DD225A33D60088BD70 /* ZippityDoDa.app */,
+				47BC08DD225A33D60088BD70 /* UberTest-iOS.app */,
 				47BC0905225A36000088BD70 /* BusinessLogicKit.framework */,
 				470BCCBD225FD4D000B4E8CD /* FlickrKit.framework */,
 				4709C39A226126A2003AB09A /* BusinessLogicKit.framework */,
@@ -217,7 +217,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		47BC08DF225A33D60088BD70 /* ZippityDoDa */ = {
+		47BC08DF225A33D60088BD70 /* UberTest */ = {
 			isa = PBXGroup;
 			children = (
 				47BC08E0225A33D60088BD70 /* AppDelegate.swift */,
@@ -228,7 +228,7 @@
 				47BC08E9225A33D70088BD70 /* LaunchScreen.storyboard */,
 				47BC08EC225A33D70088BD70 /* Info.plist */,
 			);
-			path = ZippityDoDa;
+			path = UberTest;
 			sourceTree = "<group>";
 		};
 		47BC0906225A36000088BD70 /* BusinessLogicKit */ = {
@@ -353,9 +353,9 @@
 			productReference = 470BCCBD225FD4D000B4E8CD /* FlickrKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		47BC08DC225A33D60088BD70 /* ZippityDoDa */ = {
+		47BC08DC225A33D60088BD70 /* UberTest-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 47BC08FA225A33D70088BD70 /* Build configuration list for PBXNativeTarget "ZippityDoDa" */;
+			buildConfigurationList = 47BC08FA225A33D70088BD70 /* Build configuration list for PBXNativeTarget "UberTest-iOS" */;
 			buildPhases = (
 				47BC08D9225A33D60088BD70 /* Sources */,
 				47BC08DA225A33D60088BD70 /* Frameworks */,
@@ -368,9 +368,9 @@
 				47BC0919225A36000088BD70 /* PBXTargetDependency */,
 				470BCCC3225FD4D000B4E8CD /* PBXTargetDependency */,
 			);
-			name = ZippityDoDa;
+			name = "UberTest-iOS";
 			productName = ZippityDoDa;
-			productReference = 47BC08DD225A33D60088BD70 /* ZippityDoDa.app */;
+			productReference = 47BC08DD225A33D60088BD70 /* UberTest-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 		47BC0904225A36000088BD70 /* BusinessLogicKit */ = {
@@ -419,7 +419,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 47BC08D8225A33D60088BD70 /* Build configuration list for PBXProject "ZippityDoDa" */;
+			buildConfigurationList = 47BC08D8225A33D60088BD70 /* Build configuration list for PBXProject "UberTest" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -432,7 +432,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				47BC08DC225A33D60088BD70 /* ZippityDoDa */,
+				47BC08DC225A33D60088BD70 /* UberTest-iOS */,
 				47BC0904225A36000088BD70 /* BusinessLogicKit */,
 				470BCCBC225FD4D000B4E8CD /* FlickrKit */,
 				4709C399226126A2003AB09A /* BusinessLogicKit-macOS */,
@@ -870,7 +870,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B3QS3H6L8L;
-				INFOPLIST_FILE = ZippityDoDa/Info.plist;
+				INFOPLIST_FILE = UberTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -889,7 +889,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B3QS3H6L8L;
-				INFOPLIST_FILE = ZippityDoDa/Info.plist;
+				INFOPLIST_FILE = UberTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -988,7 +988,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		47BC08D8225A33D60088BD70 /* Build configuration list for PBXProject "ZippityDoDa" */ = {
+		47BC08D8225A33D60088BD70 /* Build configuration list for PBXProject "UberTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				47BC08F8225A33D70088BD70 /* Debug */,
@@ -997,7 +997,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		47BC08FA225A33D70088BD70 /* Build configuration list for PBXNativeTarget "ZippityDoDa" */ = {
+		47BC08FA225A33D70088BD70 /* Build configuration list for PBXNativeTarget "UberTest-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				47BC08FB225A33D70088BD70 /* Debug */,
