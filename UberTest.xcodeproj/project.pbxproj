@@ -11,6 +11,15 @@
 		47030CEE2261316800356551 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47030CED2261316800356551 /* ViewController.swift */; };
 		47030CF02261316900356551 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47030CEF2261316900356551 /* Assets.xcassets */; };
 		47030CF32261316900356551 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47030CF12261316900356551 /* Main.storyboard */; };
+		47030CFB226131DD00356551 /* BusinessLogicKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4709C39A226126A2003AB09A /* BusinessLogicKit.framework */; };
+		47030D08226131F100356551 /* FlickrKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47030D01226131F100356551 /* FlickrKit.framework */; };
+		47030D09226131F100356551 /* FlickrKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 47030D01226131F100356551 /* FlickrKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		47030D0E2261320400356551 /* FlickrImageSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC0927225A379C0088BD70 /* FlickrImageSearchRepository.swift */; };
+		47030D0F2261320400356551 /* PhotoResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC093B225BD6470088BD70 /* PhotoResponseDto.swift */; };
+		47030D102261320400356551 /* FlickrApiUrlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC0939225BD0470088BD70 /* FlickrApiUrlFactory.swift */; };
+		47030D112261320400356551 /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC097C225D055E0088BD70 /* ImageRepository.swift */; };
+		47030D122261320400356551 /* DataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4709C38222611C31003AB09A /* DataTask.swift */; };
+		47030D152261323700356551 /* BusinessLogicKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4709C39A226126A2003AB09A /* BusinessLogicKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4709C38322611C31003AB09A /* DataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4709C38222611C31003AB09A /* DataTask.swift */; };
 		4709C38522612345003AB09A /* ImageSearchPresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4709C38422612345003AB09A /* ImageSearchPresenterProtocols.swift */; };
 		4709C3A3226126A2003AB09A /* BusinessLogicKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4709C39A226126A2003AB09A /* BusinessLogicKit.framework */; };
@@ -56,6 +65,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		47030CF9226131D300356551 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47BC08D5225A33D60088BD70 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4709C399226126A2003AB09A;
+			remoteInfo = "BusinessLogicKit-macOS";
+		};
+		47030D06226131F100356551 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47BC08D5225A33D60088BD70 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 47030D00226131F100356551;
+			remoteInfo = "FlickrKit-macOS";
+		};
 		4709C3A4226126A2003AB09A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 47BC08D5225A33D60088BD70 /* Project object */;
@@ -80,6 +103,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		47030D0D226131F100356551 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				47030D152261323700356551 /* BusinessLogicKit.framework in Embed Frameworks */,
+				47030D09226131F100356551 /* FlickrKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		47BC091F225A36000088BD70 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -102,6 +137,7 @@
 		47030CF22261316900356551 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		47030CF42261316900356551 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47030CF52261316900356551 /* UberTest_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UberTest_macOS.entitlements; sourceTree = "<group>"; };
+		47030D01226131F100356551 /* FlickrKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlickrKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4709C38222611C31003AB09A /* DataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTask.swift; sourceTree = "<group>"; };
 		4709C38422612345003AB09A /* ImageSearchPresenterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchPresenterProtocols.swift; sourceTree = "<group>"; };
 		4709C386226124B3003AB09A /* LoadImagesInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImagesInteractorTests.swift; sourceTree = "<group>"; };
@@ -142,6 +178,15 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		47030CE62261316800356551 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47030D08226131F100356551 /* FlickrKit.framework in Frameworks */,
+				47030CFB226131DD00356551 /* BusinessLogicKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47030CFE226131F100356551 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -246,6 +291,7 @@
 				4709C39A226126A2003AB09A /* BusinessLogicKit.framework */,
 				4709C3A2226126A2003AB09A /* BusinessLogicKit-macOSTests.xctest */,
 				47030CE92261316800356551 /* UberTest-macOS.app */,
+				47030D01226131F100356551 /* FlickrKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -306,6 +352,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		47030CFC226131F100356551 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4709C395226126A2003AB09A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -339,15 +392,36 @@
 				47030CE52261316800356551 /* Sources */,
 				47030CE62261316800356551 /* Frameworks */,
 				47030CE72261316800356551 /* Resources */,
+				47030D0D226131F100356551 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				47030CFA226131D300356551 /* PBXTargetDependency */,
+				47030D07226131F100356551 /* PBXTargetDependency */,
 			);
 			name = "UberTest-macOS";
 			productName = "UberTest-macOS";
 			productReference = 47030CE92261316800356551 /* UberTest-macOS.app */;
 			productType = "com.apple.product-type.application";
+		};
+		47030D00226131F100356551 /* FlickrKit-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47030D0A226131F100356551 /* Build configuration list for PBXNativeTarget "FlickrKit-macOS" */;
+			buildPhases = (
+				47030CFC226131F100356551 /* Headers */,
+				47030CFD226131F100356551 /* Sources */,
+				47030CFE226131F100356551 /* Frameworks */,
+				47030CFF226131F100356551 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FlickrKit-macOS";
+			productName = "FlickrKit-macOS";
+			productReference = 47030D01226131F100356551 /* FlickrKit.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 		4709C399226126A2003AB09A /* BusinessLogicKit-macOS */ = {
 			isa = PBXNativeTarget;
@@ -454,6 +528,9 @@
 					47030CE82261316800356551 = {
 						CreatedOnToolsVersion = 10.2;
 					};
+					47030D00226131F100356551 = {
+						CreatedOnToolsVersion = 10.2;
+					};
 					4709C399226126A2003AB09A = {
 						CreatedOnToolsVersion = 10.2;
 					};
@@ -489,6 +566,7 @@
 				47030CE82261316800356551 /* UberTest-macOS */,
 				47BC0904225A36000088BD70 /* BusinessLogicKit */,
 				470BCCBC225FD4D000B4E8CD /* FlickrKit */,
+				47030D00226131F100356551 /* FlickrKit-macOS */,
 				4709C399226126A2003AB09A /* BusinessLogicKit-macOS */,
 				4709C3A1226126A2003AB09A /* BusinessLogicKit-macOSTests */,
 			);
@@ -502,6 +580,13 @@
 			files = (
 				47030CF02261316900356551 /* Assets.xcassets in Resources */,
 				47030CF32261316900356551 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47030CFF226131F100356551 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,6 +638,18 @@
 			files = (
 				47030CEE2261316800356551 /* ViewController.swift in Sources */,
 				47030CEC2261316800356551 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47030CFD226131F100356551 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47030D0E2261320400356551 /* FlickrImageSearchRepository.swift in Sources */,
+				47030D122261320400356551 /* DataTask.swift in Sources */,
+				47030D102261320400356551 /* FlickrApiUrlFactory.swift in Sources */,
+				47030D0F2261320400356551 /* PhotoResponseDto.swift in Sources */,
+				47030D112261320400356551 /* ImageRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,6 +721,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		47030CFA226131D300356551 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4709C399226126A2003AB09A /* BusinessLogicKit-macOS */;
+			targetProxy = 47030CF9226131D300356551 /* PBXContainerItemProxy */;
+		};
+		47030D07226131F100356551 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 47030D00226131F100356551 /* FlickrKit-macOS */;
+			targetProxy = 47030D06226131F100356551 /* PBXContainerItemProxy */;
+		};
 		4709C3A5226126A2003AB09A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4709C399226126A2003AB09A /* BusinessLogicKit-macOS */;
@@ -672,6 +779,7 @@
 		47030CF72261316900356551 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "UberTest-macOS/UberTest_macOS.entitlements";
 				CODE_SIGN_IDENTITY = "-";
@@ -693,6 +801,7 @@
 		47030CF82261316900356551 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "UberTest-macOS/UberTest_macOS.entitlements";
 				CODE_SIGN_IDENTITY = "-";
@@ -708,6 +817,66 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		47030D0B226131F100356551 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = FlickrKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lolololo.FlickrKit-macOS";
+				PRODUCT_NAME = FlickrKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		47030D0C226131F100356551 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = FlickrKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lolololo.FlickrKit-macOS";
+				PRODUCT_NAME = FlickrKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1088,6 +1257,15 @@
 			buildConfigurations = (
 				47030CF72261316900356551 /* Debug */,
 				47030CF82261316900356551 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47030D0A226131F100356551 /* Build configuration list for PBXNativeTarget "FlickrKit-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47030D0B226131F100356551 /* Debug */,
+				47030D0C226131F100356551 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

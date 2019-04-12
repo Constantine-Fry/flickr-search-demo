@@ -3,6 +3,7 @@
 //  Copyright © 2019 lololo. All rights reserved.
 //
 
+import Foundation
 import BusinessLogicKit
 
 public final class ImageRepository: ImagesRepositoring {
