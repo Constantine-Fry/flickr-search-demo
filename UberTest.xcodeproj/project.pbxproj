@@ -47,6 +47,8 @@
 		470BCCCE225FD5AF00B4E8CD /* BusinessLogicKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47BC0905225A36000088BD70 /* BusinessLogicKit.framework */; };
 		470BCCD0225FD73300B4E8CD /* PresenterStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470BCCCF225FD73300B4E8CD /* PresenterStructs.swift */; };
 		470BCD3E2261167000B4E8CD /* DefaultJPEGImageDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470BCD3D2261167000B4E8CD /* DefaultJPEGImageDecoder.swift */; };
+		47A56A3D2262826600393693 /* CollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A56A3B2262826600393693 /* CollectionViewItem.swift */; };
+		47A56A3E2262826600393693 /* CollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47A56A3C2262826600393693 /* CollectionViewItem.xib */; };
 		47BC08E1225A33D60088BD70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC08E0225A33D60088BD70 /* AppDelegate.swift */; };
 		47BC08E3225A33D60088BD70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC08E2225A33D60088BD70 /* ViewController.swift */; };
 		47BC08E6225A33D60088BD70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47BC08E4225A33D60088BD70 /* Main.storyboard */; };
@@ -151,6 +153,9 @@
 		470BCCC0225FD4D000B4E8CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		470BCCCF225FD73300B4E8CD /* PresenterStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterStructs.swift; sourceTree = "<group>"; };
 		470BCD3D2261167000B4E8CD /* DefaultJPEGImageDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultJPEGImageDecoder.swift; sourceTree = "<group>"; };
+		47A56A3B2262826600393693 /* CollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewItem.swift; sourceTree = "<group>"; };
+		47A56A3C2262826600393693 /* CollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewItem.xib; sourceTree = "<group>"; };
+		47A56A3F2262857900393693 /* UberTest-macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "UberTest-macOS.entitlements"; sourceTree = "<group>"; };
 		47BC08DD225A33D60088BD70 /* UberTest-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UberTest-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47BC08E0225A33D60088BD70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47BC08E2225A33D60088BD70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -238,8 +243,11 @@
 		47030CEA2261316800356551 /* UberTest-macOS */ = {
 			isa = PBXGroup;
 			children = (
+				47A56A3F2262857900393693 /* UberTest-macOS.entitlements */,
 				47030CEB2261316800356551 /* AppDelegate.swift */,
 				47030CED2261316800356551 /* ViewController.swift */,
+				47A56A3B2262826600393693 /* CollectionViewItem.swift */,
+				47A56A3C2262826600393693 /* CollectionViewItem.xib */,
 				47030CEF2261316900356551 /* Assets.xcassets */,
 				47030CF12261316900356551 /* Main.storyboard */,
 				47030CF42261316900356551 /* Info.plist */,
@@ -527,6 +535,11 @@
 				TargetAttributes = {
 					47030CE82261316800356551 = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					47030D00226131F100356551 = {
 						CreatedOnToolsVersion = 10.2;
@@ -580,6 +593,7 @@
 			files = (
 				47030CF02261316900356551 /* Assets.xcassets in Resources */,
 				47030CF32261316900356551 /* Main.storyboard in Resources */,
+				47A56A3E2262826600393693 /* CollectionViewItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,6 +652,7 @@
 			files = (
 				47030CEE2261316800356551 /* ViewController.swift in Sources */,
 				47030CEC2261316800356551 /* AppDelegate.swift in Sources */,
+				47A56A3D2262826600393693 /* CollectionViewItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -781,7 +796,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "UberTest-macOS/UberTest_macOS.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "UberTest-macOS/UberTest-macOS.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -803,7 +818,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "UberTest-macOS/UberTest_macOS.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "UberTest-macOS/UberTest-macOS.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;

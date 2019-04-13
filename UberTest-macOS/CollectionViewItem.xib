@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="CollectionViewItem" customModule="UberTest_macOS" customModuleProvider="target"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <collectionViewItem id="YbC-sz-6P4" customClass="CollectionViewItem" customModule="UberTest_macOS" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="Ob2-8V-ljE" id="FLy-Zt-qns"/>
+                <outlet property="view" destination="Xa1-LU-nvH" id="lIY-jt-yUq"/>
+            </connections>
+        </collectionViewItem>
+        <customView id="Xa1-LU-nvH">
+            <rect key="frame" x="0.0" y="0.0" width="163" height="96"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ob2-8V-ljE">
+                    <rect key="frame" x="0.0" y="0.0" width="163" height="96"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="3OO-L3-9rY"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Ob2-8V-ljE" secondAttribute="trailing" id="6eN-sh-FM8"/>
+                <constraint firstItem="Ob2-8V-ljE" firstAttribute="leading" secondItem="Xa1-LU-nvH" secondAttribute="leading" id="McH-EC-hzY"/>
+                <constraint firstItem="Ob2-8V-ljE" firstAttribute="top" secondItem="Xa1-LU-nvH" secondAttribute="top" id="Yhm-9R-KeK"/>
+                <constraint firstAttribute="bottom" secondItem="Ob2-8V-ljE" secondAttribute="bottom" id="boM-a7-dt0"/>
+            </constraints>
+            <point key="canvasLocation" x="-284.5" y="141"/>
+        </customView>
+    </objects>
+</document>

@@ -25,6 +25,7 @@ extension ImageSearchPresenter: ImageSearchPresenting {
         self.view?.update(.showLoading)
         self.term = term
         if term.isEmpty {
+            self.view?.update(.showEmpty)
             return
         }
         self.interactor.search(query: SearchQuery(text: term, page: 1)) { (result) in
