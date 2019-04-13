@@ -14,6 +14,7 @@ public struct FlickrApiUrlFactory {
         self.apiKey = apiKey
     }
 
+    // https://www.flickr.com/services/api/flickr.photos.search.html
     func makeSearchRequest(query: SearchQuery) -> URLRequest {
         var components = URLComponents(string: "https://api.flickr.com/services/rest")
         components?.queryItems = [
@@ -32,8 +33,9 @@ public struct FlickrApiUrlFactory {
         return URLRequest(url: url)
     }
 
+    // https://www.flickr.com/services/api/misc.urls.html
     func makePhotoUrl(photo: PhotoResponseDto.PhotoDto) -> URL {
-        return URL(string: "https://farm\(photo.farm).static.flickr.com/\(photo.server)/\(photo.id)_\(photo.secret).jpg")!
+        return URL(string: "https://farm\(photo.farm).static.flickr.com/\(photo.server)/\(photo.id)_\(photo.secret)_m.jpg")!
     }
 
 }
