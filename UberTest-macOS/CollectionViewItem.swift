@@ -17,5 +17,10 @@ class CollectionViewItem: NSCollectionViewItem {
         super.viewDidLoad()
         // Do view setup here.
     }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.imageView?.image = nil
+    }
     
 }

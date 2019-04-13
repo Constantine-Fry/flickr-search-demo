@@ -720,17 +720,16 @@
                                     <outlet property="delegate" destination="XfG-lQ-9wD" id="xkm-Nc-u4p"/>
                                 </connections>
                             </searchField>
-                            <scrollView wantsLayer="YES" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GT-UZ-cHC">
-                                <rect key="frame" x="115" y="87" width="250" height="160"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <clipView key="contentView" ambiguous="YES" id="dkk-nU-xR9">
-                                    <rect key="frame" x="1" y="1" width="248" height="158"/>
+                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GT-UZ-cHC">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="311"/>
+                                <clipView key="contentView" id="dkk-nU-xR9">
+                                    <rect key="frame" x="1" y="1" width="478" height="309"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <collectionView ambiguous="YES" id="iCn-Nf-Pxh">
-                                            <rect key="frame" x="0.0" y="0.0" width="248" height="158"/>
+                                        <collectionView id="iCn-Nf-Pxh">
+                                            <rect key="frame" x="0.0" y="0.0" width="478" height="158"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="QUB-1U-ufx">
+                                            <collectionViewFlowLayout key="collectionViewLayout" id="QUB-1U-ufx">
                                                 <size key="itemSize" width="50" height="50"/>
                                             </collectionViewFlowLayout>
                                             <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -754,7 +753,11 @@
                         <constraints>
                             <constraint firstItem="7TH-Ta-52E" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="3Kp-vB-0xh"/>
                             <constraint firstAttribute="trailing" secondItem="7TH-Ta-52E" secondAttribute="trailing" id="85M-zi-a1m"/>
+                            <constraint firstAttribute="trailing" secondItem="9GT-UZ-cHC" secondAttribute="trailing" id="Mzn-Y3-RYd"/>
                             <constraint firstItem="7TH-Ta-52E" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="PPA-fc-3g2"/>
+                            <constraint firstItem="9GT-UZ-cHC" firstAttribute="top" secondItem="7TH-Ta-52E" secondAttribute="bottom" id="XW0-iv-V6p"/>
+                            <constraint firstItem="9GT-UZ-cHC" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="beB-aG-QFK"/>
+                            <constraint firstAttribute="bottom" secondItem="9GT-UZ-cHC" secondAttribute="bottom" id="utm-lm-ZxI"/>
                         </constraints>
                     </view>
                     <connections>
