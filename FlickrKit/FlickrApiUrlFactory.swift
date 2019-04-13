@@ -28,7 +28,7 @@ public struct FlickrApiUrlFactory {
             URLQueryItem(name: "safe_search", value: "1"),
         ]
         guard let url = components?.url else {
-            assert(false)
+            fatalError()
         }
         return URLRequest(url: url)
     }
