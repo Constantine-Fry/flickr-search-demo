@@ -42,6 +42,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         presenter.view = viewController
         viewController.presenter = presenter
 
+        // Testing memory leaks
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+//            self.window?.rootViewController = nil
+//        }
+
         return true
     }
 
