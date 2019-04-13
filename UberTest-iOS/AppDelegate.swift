@@ -37,7 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                  cacheLimit: 60*1024*1024)
         let presenter = ImageSearchPresenter(interactor: ImageSearchInteractor(repository: searchRepository),
                                              imageLoadingInteractor: loadingInteractor)
-        let viewController = self.window?.rootViewController as! ViewController
+        let viewController = (self.window?.rootViewController as! UINavigationController).viewControllers.first!
+            as! ViewController
         presenter.view = viewController
         viewController.presenter = presenter
 

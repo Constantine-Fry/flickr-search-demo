@@ -21,15 +21,7 @@ class ViewController: NSViewController, ImageSearchViewing {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let flowLayout = NSCollectionViewFlowLayout()
-        flowLayout.itemSize = NSSize(width: 160.0, height: 140.0)
-        flowLayout.minimumInteritemSpacing = 20.0
-        flowLayout.minimumLineSpacing = 20.0
-        collectionView.collectionViewLayout = flowLayout
-        // 2
-        view.wantsLayer = true
-        // 3
-        collectionView.layer?.backgroundColor = NSColor.black.cgColor
+        self.presenter?.ready()
     }
 
     func update(_ state: ImageViewState) {
@@ -39,9 +31,9 @@ class ViewController: NSViewController, ImageSearchViewing {
             NSApplication.shared.windows.first?.title = text
         case .showEmpty:
             self.viewItem = nil
-            NSApplication.shared.windows.first?.title = "Empty"
+            NSApplication.shared.windows.first?.title = "Search"
         case .set(let item):
-            NSApplication.shared.windows.first?.title = "\(item.photos.count)"
+            NSApplication.shared.windows.first?.title = "\(item.photos.count) photos"
             self.viewItem = item
         case .showLoading:
             self.viewItem = nil

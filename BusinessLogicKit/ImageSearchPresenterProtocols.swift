@@ -20,6 +20,7 @@ public protocol ImagesUseCase {
 }
 
 public protocol ImageSearchPresenting {
+    func ready()
     func search(term: String)
     func loadMore(for item: ImageSearchViewItem)
 }

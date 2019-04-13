@@ -21,6 +21,10 @@ public final class ImageSearchPresenter {
 
 extension ImageSearchPresenter: ImageSearchPresenting {
 
+    public func ready() {
+        self.view?.update(.showEmpty)
+    }
+
     public func search(term: String) {
         self.view?.update(.showLoading)
         self.term = term

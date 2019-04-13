@@ -22,6 +22,7 @@ class ViewController: UIViewController, ImageSearchViewing {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.presenter?.ready()
     }
 
     func update(_ state: ImageViewState) {
@@ -29,16 +30,20 @@ class ViewController: UIViewController, ImageSearchViewing {
         case .presentError(let text):
             self.activityIndicator.stopAnimating()
             self.viewItem = nil
+            self.title = text
             self.showError(text)
         case .showEmpty:
             self.activityIndicator.stopAnimating()
             self.viewItem = nil
+            self.title = "Search"
         case .set(let item):
             self.activityIndicator.stopAnimating()
             self.viewItem = item
+            self.title = "\(item.photos.count) photos"
         case .showLoading:
             self.activityIndicator.startAnimating()
             self.viewItem = nil
+            self.title = "Loading"
         }
         self.collectienView.reloadData()
     }
