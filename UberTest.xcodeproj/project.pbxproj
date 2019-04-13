@@ -24,7 +24,6 @@
 		4709C38522612345003AB09A /* ImageSearchPresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4709C38422612345003AB09A /* ImageSearchPresenterProtocols.swift */; };
 		4709C3A3226126A2003AB09A /* BusinessLogicKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4709C39A226126A2003AB09A /* BusinessLogicKit.framework */; };
 		4709C3B1226126B8003AB09A /* LoadImagesInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4709C386226124B3003AB09A /* LoadImagesInteractorTests.swift */; };
-		4709C3B2226126BB003AB09A /* BusinessLogicKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC0914225A36000088BD70 /* BusinessLogicKitTests.swift */; };
 		4709C3B3226126C8003AB09A /* ImageSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC0925225A36A70088BD70 /* ImageSearchPresenter.swift */; };
 		4709C3B4226126C8003AB09A /* ImageSearchPresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4709C38422612345003AB09A /* ImageSearchPresenterProtocols.swift */; };
 		4709C3B5226126C8003AB09A /* PresenterStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470BCCCF225FD73300B4E8CD /* PresenterStructs.swift */; };
@@ -166,7 +165,6 @@
 		47BC0905225A36000088BD70 /* BusinessLogicKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BusinessLogicKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47BC0907225A36000088BD70 /* BusinessLogicKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BusinessLogicKit.h; sourceTree = "<group>"; };
 		47BC0908225A36000088BD70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		47BC0914225A36000088BD70 /* BusinessLogicKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessLogicKitTests.swift; sourceTree = "<group>"; };
 		47BC0916225A36000088BD70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47BC0923225A36570088BD70 /* ImageSearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchInteractor.swift; sourceTree = "<group>"; };
 		47BC0925225A36A70088BD70 /* ImageSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchPresenter.swift; sourceTree = "<group>"; };
@@ -338,7 +336,6 @@
 			isa = PBXGroup;
 			children = (
 				4709C3BC22612AB2003AB09A /* download.png */,
-				47BC0914225A36000088BD70 /* BusinessLogicKitTests.swift */,
 				4709C386226124B3003AB09A /* LoadImagesInteractorTests.swift */,
 				4709C3BE22612E6D003AB09A /* MockImagesRepository.swift */,
 				4709C3C022612E82003AB09A /* MockImageDecoder.swift */,
@@ -691,7 +688,6 @@
 				4709C3C122612E82003AB09A /* MockImageDecoder.swift in Sources */,
 				4709C3BF22612E6D003AB09A /* MockImagesRepository.swift in Sources */,
 				4709C3B1226126B8003AB09A /* LoadImagesInteractorTests.swift in Sources */,
-				4709C3B2226126BB003AB09A /* BusinessLogicKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
