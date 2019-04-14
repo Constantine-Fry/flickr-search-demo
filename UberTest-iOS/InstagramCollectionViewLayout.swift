@@ -11,47 +11,53 @@ final class InstagramCollectionViewLayout: UICollectionViewFlowLayout {
 
     override func prepare() {
         super.prepare()
+        let frames = self.frames(count: self.collectionView!.numberOfItems(inSection: 0),
+                                 viewWidth: self.collectionView!.frame.width)
+        self.items = frames.enumerated().map({
+            let attribute = UICollectionViewLayoutAttributes(forCellWith: IndexPath(row: $0.offset, section: 0))
+            attribute.frame = $0.element
+            return attribute
+        })
+    }
+
+    private func frames(count: Int, viewWidth: CGFloat) -> [CGRect] {
+        if count == 0 {
+            return []
+        }
         let space: CGFloat = 2
         let width = (self.collectionView!.frame.size.width - space * 2) / 3
         let largeItemSize = CGSize(width: width * 2 + space, height: width * 2 + space)
         let smallItemSize = CGSize(width: width, height: width)
-        self.minimumLineSpacing = 2
-        self.minimumInteritemSpacing = 2
-        self.items = [UICollectionViewLayoutAttributes]()
-        let count = self.collectionView!.numberOfItems(inSection: 0)
-        if count == 0 {
-            return
-        }
         var y: CGFloat = 0
-        self.items = (0...count-1).map { (num) in
-            let attribute = UICollectionViewLayoutAttributes(forCellWith: IndexPath(row: num, section: 0))
-            let num = attribute.indexPath.item % 18 + 1
+        return (0...count-1).map { (num) in
+            var frame = CGRect.zero
+            let num = num % 18 + 1
             if num == 1 {
-                attribute.frame = CGRect(x: 0, y: y,
-                                         width: smallItemSize.width, height: smallItemSize.height)
+                frame = CGRect(x: 0, y: y,
+                               width: smallItemSize.width, height: smallItemSize.height)
             }
             if num == 2 {
-                attribute.frame = CGRect(x: 0, y: y + smallItemSize.height + space,
-                                         width: smallItemSize.width, height: smallItemSize.height)
+                frame = CGRect(x: 0, y: y + smallItemSize.height + space,
+                               width: smallItemSize.width, height: smallItemSize.height)
             }
             if num == 3 {
-                attribute.frame = CGRect(x: smallItemSize.width + space, y: y,
-                                         width: largeItemSize.width , height: largeItemSize.height)
+                frame = CGRect(x: smallItemSize.width + space, y: y,
+                               width: largeItemSize.width , height: largeItemSize.height)
                 y += largeItemSize.height + space
             }
 
             if num == 10 {
-                attribute.frame = CGRect(x: 0, y: y,
-                                         width: largeItemSize.width, height: largeItemSize.height)
+                frame = CGRect(x: 0, y: y,
+                               width: largeItemSize.width, height: largeItemSize.height)
             }
             if num == 11 {
-                attribute.frame = CGRect(x: largeItemSize.width + space, y: y ,
-                                         width: smallItemSize.width, height: smallItemSize.height)
+                frame = CGRect(x: largeItemSize.width + space, y: y ,
+                               width: smallItemSize.width, height: smallItemSize.height)
             }
             if num == 12 {
-                attribute.frame = CGRect(x: largeItemSize.width + space,
-                                         y: y + smallItemSize.height + space,
-                                         width: smallItemSize.width, height: smallItemSize.height)
+                frame = CGRect(x: largeItemSize.width + space,
+                               y: y + smallItemSize.height + space,
+                               width: smallItemSize.width, height: smallItemSize.height)
                 y += largeItemSize.height + space
             }
             if num >= 4 && num <= 9 || num >= 13 && num <= 18 {
@@ -61,12 +67,12 @@ final class InstagramCollectionViewLayout: UICollectionViewFlowLayout {
                 } else if num % 3 == 2 {
                     x = smallItemSize.width + space
                 }
-                attribute.frame = CGRect(x: x, y: y, width: smallItemSize.width, height: smallItemSize.height)
+                frame = CGRect(x: x, y: y, width: smallItemSize.width, height: smallItemSize.height)
                 if num == 6 || num == 9 || num == 15 || num == 18 {
                     y += smallItemSize.height + space
                 }
             }
-            return attribute
+            return frame
         }
     }
 

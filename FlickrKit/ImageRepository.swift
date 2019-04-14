@@ -20,6 +20,9 @@ public final class ImageRepository: ImagesRepositoring {
             if let error = error as? URLError, error.code == .cancelled {
                 return
             }
+            if data == nil {
+                print("Failed: \(url)")
+            }
             task?.completions.forEach({ $0(data )})
             task?.completions = []
         }
