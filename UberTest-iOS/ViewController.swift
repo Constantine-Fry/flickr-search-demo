@@ -54,11 +54,6 @@ class ViewController: UIViewController, ImageSearchViewing {
         self.present(alert, animated: true, completion: nil)
     }
 
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        self.collectienView.reloadData()
-    }
-
 
 }
 
@@ -71,18 +66,20 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectienView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ImageCell
-        if let photo = cell.photo {
-            self.presenter?.stopLoadImage(for: photo)
-        }
-        let photo = self.viewItem!.photos[indexPath.row]
-        cell.photo = photo
-        if let image = self.presenter?.cachedImage(for: photo) {
-            cell.imageView.image = UIImage(cgImage: image)
-        }
-        if let viewItem = self.viewItem, indexPath.row == viewItem.photos.count - 20 {
-            self.presenter?.loadMore(for: viewItem)
-        }
+        cell.backgroundColor = .black
         return cell
+//        if let photo = cell.photo {
+//            self.presenter?.stopLoadImage(for: photo)
+//        }
+//        let photo = self.viewItem!.photos[indexPath.row]
+//        cell.photo = photo
+//        if let image = self.presenter?.cachedImage(for: photo) {
+//            cell.imageView.image = UIImage(cgImage: image)
+//        }
+//        if let viewItem = self.viewItem, indexPath.row == viewItem.photos.count - 20 {
+//            self.presenter?.loadMore(for: viewItem)
+//        }
+//        return cell
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -105,12 +102,6 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
         }
     }
 
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = round(collectienView.frame.size.width/3)
-        return CGSize(width: size, height: size)
-    }
 
 }
 
