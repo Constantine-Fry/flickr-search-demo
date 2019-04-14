@@ -47,14 +47,14 @@
                                 <collectionViewLayout key="collectionViewLayout" id="EbY-Wk-anU" customClass="InstagramCollectionViewLayout" customModule="UberTest_iOS" customModuleProvider="target"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="5Yn-Gs-XT2" customClass="ImageCell" customModule="UberTest_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="141" height="147"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="141" height="147"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jgi-PU-i27">
-                                                    <rect key="frame" x="0.0" y="0.0" width="149" height="164"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="141" height="147"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
@@ -64,6 +64,7 @@
                                             <constraint firstAttribute="trailing" secondItem="Jgi-PU-i27" secondAttribute="trailing" id="TGF-ct-sUT"/>
                                             <constraint firstItem="Jgi-PU-i27" firstAttribute="leading" secondItem="5Yn-Gs-XT2" secondAttribute="leading" id="wLZ-Ff-daK"/>
                                         </constraints>
+                                        <size key="customSize" width="141" height="147"/>
                                         <connections>
                                             <outlet property="imageView" destination="Jgi-PU-i27" id="Fuh-0N-VrK"/>
                                         </connections>
@@ -102,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="167"/>
+            <point key="canvasLocation" x="31.884057971014496" y="166.30434782608697"/>
         </scene>
     </scenes>
 </document>

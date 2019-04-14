@@ -11,7 +11,7 @@ final class ImageCell: UICollectionViewCell {
     @IBOutlet var imageView: UIImageView!
 
     var photo: Photo?
-
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         self.imageView.image = nil

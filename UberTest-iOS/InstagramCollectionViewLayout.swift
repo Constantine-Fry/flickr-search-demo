@@ -23,18 +23,18 @@ final class InstagramCollectionViewLayout: UICollectionViewFlowLayout {
             return
         }
         var y: CGFloat = 0
-        (0...count-1).forEach { (num) in
+        self.items = (0...count-1).map { (num) in
             let attribute = UICollectionViewLayoutAttributes(forCellWith: IndexPath(row: num, section: 0))
-            let num = attribute.indexPath.item % 18
-            if num == 0 {
+            let num = attribute.indexPath.item % 18 + 1
+            if num == 1 {
                 attribute.frame = CGRect(x: 0, y: y,
                                          width: smallItemSize.width, height: smallItemSize.height)
             }
-            if num == 1 {
+            if num == 2 {
                 attribute.frame = CGRect(x: 0, y: y + smallItemSize.height + space,
                                          width: smallItemSize.width, height: smallItemSize.height)
             }
-            if num == 2 {
+            if num == 3 {
                 attribute.frame = CGRect(x: smallItemSize.width + space, y: y,
                                          width: largeItemSize.width , height: largeItemSize.height)
                 y += largeItemSize.height + space
@@ -55,13 +55,18 @@ final class InstagramCollectionViewLayout: UICollectionViewFlowLayout {
                 y += largeItemSize.height + space
             }
             if num >= 4 && num <= 9 || num >= 13 && num <= 18 {
-                attribute.frame = CGRect(x: CGFloat(num % 3) * (smallItemSize.width + space),
-                                         y: y, width: smallItemSize.width, height: smallItemSize.height)
+                var x: CGFloat = 0
+                if num % 3 == 0 {
+                    x = (smallItemSize.width + space) * 2
+                } else if num % 3 == 2 {
+                    x = smallItemSize.width + space
+                }
+                attribute.frame = CGRect(x: x, y: y, width: smallItemSize.width, height: smallItemSize.height)
                 if num == 6 || num == 9 || num == 15 || num == 18 {
                     y += smallItemSize.height + space
                 }
             }
-            self.items.append(attribute)
+            return attribute
         }
     }
 
