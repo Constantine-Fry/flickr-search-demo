@@ -66,6 +66,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectienView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ImageCell
+        cell.backgroundColor = .white
         if let photo = cell.photo {
             self.presenter?.stopLoadImage(for: photo)
         }
@@ -88,6 +89,8 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
                     UIView.transition(with: cell.imageView, duration: 0.2, options: .transitionCrossDissolve,
                                       animations: { cell.imageView.image = UIImage(cgImage: image)},
                                       completion: nil)
+                } else {
+                    cell.backgroundColor = .black
                 }
             })
         }

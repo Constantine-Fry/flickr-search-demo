@@ -67,7 +67,7 @@ extension ViewController: NSCollectionViewDataSource, NSCollectionViewDelegate {
                         itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         let cell = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "CollectionViewItem"),
                                            for: indexPath) as! CollectionViewItem
-
+        cell.imageView?.layer?.backgroundColor = NSColor.clear.cgColor
         if let photo = cell.photo {
             self.presenter?.stopLoadImage(for: photo)
         }
@@ -89,6 +89,8 @@ extension ViewController: NSCollectionViewDataSource, NSCollectionViewDelegate {
             self.presenter?.loadImage(for: photo, completion: { (image) in
                 if let image = image {
                     cell.imageView?.image = NSImage(cgImage: image, size: NSSize(width: image.width, height: image.height))
+                } else {
+                    cell.imageView?.layer?.backgroundColor = NSColor.black.cgColor
                 }
             })
         }
