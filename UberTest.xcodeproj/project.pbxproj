@@ -154,6 +154,8 @@
 		470BCCCF225FD73300B4E8CD /* PresenterStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterStructs.swift; sourceTree = "<group>"; };
 		470BCD3D2261167000B4E8CD /* DefaultJPEGImageDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultJPEGImageDecoder.swift; sourceTree = "<group>"; };
 		47103CCE2263529300A81C9D /* InstagramCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramCollectionViewLayout.swift; sourceTree = "<group>"; };
+		47103CD02263834400A81C9D /* modules.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modules.png; sourceTree = "<group>"; };
+		47103CD12263834400A81C9D /* architecutere.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = architecutere.png; sourceTree = "<group>"; };
 		47A56A3B2262826600393693 /* CollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewItem.swift; sourceTree = "<group>"; };
 		47A56A3C2262826600393693 /* CollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewItem.xib; sourceTree = "<group>"; };
 		47A56A3F2262857900393693 /* UberTest-macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "UberTest-macOS.entitlements"; sourceTree = "<group>"; };
@@ -282,6 +284,8 @@
 			isa = PBXGroup;
 			children = (
 				47F9A4742262972900F15231 /* README.md */,
+				47103CD02263834400A81C9D /* modules.png */,
+				47103CD12263834400A81C9D /* architecutere.png */,
 				47BC08DF225A33D60088BD70 /* UberTest-iOS */,
 				47030CEA2261316800356551 /* UberTest-macOS */,
 				47BC0906225A36000088BD70 /* BusinessLogicKit */,
