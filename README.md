@@ -33,9 +33,11 @@ Things I considered.
 
 - I used NSCache to keep most recently downloaded images in memory. The size of the cache is set to 60 MB. Although it's a little tricky to calculate the size of JPEG image, because system will keep both encoded and decoded JPEG data in memory. For simplicity i used data.length as cost for NSCache.
 - The downloading of images is cancelled once the cell goes off screen.
+- Search requests are cancelled while user types.
 - I used custom CollectionView layout which mimics the layout of Instagram
 
 Things I could improve having more time:
 
 - Have more tests
 - Use different priorities for NSURLSessionTask for prefetching and loading for visible cells.
+- Throttle user input to reduce amount of search requests.
