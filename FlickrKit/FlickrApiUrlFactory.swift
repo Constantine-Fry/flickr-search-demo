@@ -35,7 +35,12 @@ public struct FlickrApiUrlFactory {
 
     // https://www.flickr.com/services/api/misc.urls.html
     func makePhotoUrl(photo: PhotoResponseDto.PhotoDto) -> URL {
-        return URL(string: "https://farm\(photo.farm).static.flickr.com/\(photo.server)/\(photo.id)_\(photo.secret)_m.jpg")!
+        var farm = photo.farm
+        if farm == 0 {
+            farm = 1
+        }
+        // It seems there is an issue with static.flickr.com https://www.flickr.com/help/forum/en-us/72157677738897767/
+        return URL(string: "https://farm\(photo.farm).staticflickr.com/\(photo.server)/\(photo.id)_\(photo.secret)_m.jpg")!
     }
 
 }
