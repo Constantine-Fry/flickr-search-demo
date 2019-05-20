@@ -79,17 +79,26 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="oLK-hK-g6n">
                                 <rect key="frame" x="197" y="214" width="20" height="20"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5l-dc-vl9">
+                                <rect key="frame" x="16" y="213" width="382" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oLK-hK-g6n" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="0Ur-fj-KG9"/>
                             <constraint firstItem="vJ8-sY-440" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1fG-Aq-IGs"/>
                             <constraint firstItem="oLK-hK-g6n" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="Bzw-FM-Tho"/>
+                            <constraint firstItem="z5l-dc-vl9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="149" id="Eyl-Ku-EPy"/>
+                            <constraint firstItem="z5l-dc-vl9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="H0g-UV-yo5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vJ8-sY-440" secondAttribute="trailing" id="NFW-NJ-an4"/>
                             <constraint firstItem="vJ8-sY-440" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OcO-k4-aD8"/>
                             <constraint firstItem="N3Z-YO-rVw" firstAttribute="top" secondItem="vJ8-sY-440" secondAttribute="bottom" id="PdY-gQ-5LJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="N3Z-YO-rVw" secondAttribute="trailing" id="VU5-EF-ey9"/>
                             <constraint firstItem="N3Z-YO-rVw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gDV-5E-7cu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z5l-dc-vl9" secondAttribute="trailing" constant="16" id="icP-Yc-a9s"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="N3Z-YO-rVw" secondAttribute="bottom" id="lXd-hx-76E"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -98,6 +107,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="oLK-hK-g6n" id="exo-4b-ncH"/>
                         <outlet property="collectienView" destination="N3Z-YO-rVw" id="5PS-Dg-J0l"/>
+                        <outlet property="errorLabel" destination="z5l-dc-vl9" id="xEk-Jh-0aR"/>
                         <outlet property="searchField" destination="vJ8-sY-440" id="wI5-D9-Vcg"/>
                     </connections>
                 </viewController>

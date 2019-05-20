@@ -37,7 +37,8 @@ extension ImageSearchPresenter: ImageSearchPresenting {
             DispatchQueue.main.async {
                 switch result {
                 case .failure:
-                    self.view?.update(.presentError(NSLocalizedString("Failed", comment: "")))
+                    self.view?.update(.presentError(NSLocalizedString("An error occurred, please try again later",
+                                                                      comment: "")))
                 case .success(let page):
                     self.view?.update(.set(ImageSearchViewItem(photos: page.photos,
                                                                hasMore: page.page < page.pages,
