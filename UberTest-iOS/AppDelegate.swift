@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let searchRepository = FlickrImageSearchRepository(
             session: session,
             requestFactory: FlickrApiUrlFactory(apiKey: String(bytes: keyData, encoding: .utf8)!),
+            deserializer: JsonDataDeserializer(),
             queue: DispatchQueue(label: "com.app.flickr-repository.queue"))
         let loadingRepository = ImageRepository(session: session)
         let loadingInteractor = LoadImagesInteractor(repository: loadingRepository,

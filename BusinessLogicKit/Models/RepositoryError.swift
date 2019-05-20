@@ -6,4 +6,5 @@
 public enum RepositoryError: Error {
     case failedToCreateUrl
     case failedToLoad
+    case failedToDeserialize
 }

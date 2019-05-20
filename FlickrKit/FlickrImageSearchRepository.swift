@@ -6,17 +6,28 @@
 import Foundation
 import BusinessLogicKit
 
+public protocol Deserializing {
+
+    var contentTypes: Set<String> { get }
+
+    func deserialize<T: Decodable>(data: Data) throws -> T
+
+}
+
 public final class FlickrImageSearchRepository: ImageSearchRepositoring {
 
     private let session: URLSession
     private let requestFactory: FlickrApiUrlFactory
     private let queue: DispatchQueue
     private var searchTask: URLSessionTask?
+    private let deserializer: Deserializing
 
-    public init(session: URLSession, requestFactory: FlickrApiUrlFactory, queue: DispatchQueue) {
+    public init(session: URLSession, requestFactory: FlickrApiUrlFactory, deserializer: Deserializing,
+                queue: DispatchQueue) {
         self.session = session
         self.requestFactory = requestFactory
         self.queue = queue
+        self.deserializer = deserializer
     }
 
     public func search(query: SearchQuery, completion: @escaping (Result<Page, Error>) -> Void) {
@@ -41,7 +52,7 @@ public final class FlickrImageSearchRepository: ImageSearchRepositoring {
     }
 
     private func makePage(from data: Data) throws -> Page {
-        let response = try JSONDecoder().decode(PhotoResponseDto.self, from: data)
+        let response: PhotoResponseDto = try self.deserializer.deserialize(data: data)
         guard response.stat == "ok" else {
             throw RepositoryError.failedToLoad
         }
@@ -59,7 +70,8 @@ public final class FlickrImageSearchRepository: ImageSearchRepositoring {
                 return
             }
             let response = response as? HTTPURLResponse
-            if let data = data, response?.statusCode == 200 {
+            let contentType = (response?.allHeaderFields["Content-Type"] as? String) ?? ""
+            if let data = data, response?.statusCode == 200, self.deserializer.contentTypes.contains(contentType) {
                 completion(.success(data))
             } else {
                 completion(.failure(RepositoryError.failedToLoad))
