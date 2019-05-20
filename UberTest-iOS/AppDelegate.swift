@@ -53,13 +53,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case .nothing:
             return UIViewController()
         case .picsum:
-            name = "Picsum"
+            name = "Picsum API"
             searchRepository = LoremImageSearchRepository(url: URL(string: "https://picsum.photos/400")!)
         case .placekittens:
-            name = "PlaceKittens"
+            name = "PlaceKittens API"
             searchRepository = LoremImageSearchRepository(url: URL(string: "https://placekitten.com/g/400/400")!)
         case .flickr:
-            name = "Flickr"
+            name = "Flickr API"
             // This is raw bytes of Flickr API key. It doesn't add much of security, because one can anyway use
             // MITM to see all the request app sends, but anyway at least the key wouldn't be visible with strings command line.
             let keyData: [UInt8] = [51, 101, 55, 99, 99, 50, 54, 54, 97, 101, 50, 98, 48, 101, 48,
