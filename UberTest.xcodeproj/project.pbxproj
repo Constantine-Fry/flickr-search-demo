@@ -289,6 +289,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4750528622930882005DC5C1 /* ImageSearch */ = {
+			isa = PBXGroup;
+			children = (
+				47BC0925225A36A70088BD70 /* ImageSearchPresenter.swift */,
+				4709C38422612345003AB09A /* ImageSearchPresenterProtocols.swift */,
+				470BCCCF225FD73300B4E8CD /* PresenterStructs.swift */,
+				47BC0923225A36570088BD70 /* ImageSearchInteractor.swift */,
+				47BC097A225CFBB70088BD70 /* LoadImagesInteractor.swift */,
+				470BCD3D2261167000B4E8CD /* DefaultJPEGImageDecoder.swift */,
+			);
+			path = ImageSearch;
+			sourceTree = "<group>";
+		};
+		47505287229308A4005DC5C1 /* ImageSearch */ = {
+			isa = PBXGroup;
+			children = (
+				47BC08E2225A33D60088BD70 /* SearchViewController.swift */,
+				47BC097E225D092D0088BD70 /* ImageCell.swift */,
+				47103CCE2263529300A81C9D /* InstagramCollectionViewLayout.swift */,
+			);
+			path = ImageSearch;
+			sourceTree = "<group>";
+		};
 		47BC08D4225A33D60088BD70 = {
 			isa = PBXGroup;
 			children = (
@@ -323,9 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				47BC08E0225A33D60088BD70 /* AppDelegate.swift */,
-				47BC08E2225A33D60088BD70 /* SearchViewController.swift */,
-				47BC097E225D092D0088BD70 /* ImageCell.swift */,
-				47103CCE2263529300A81C9D /* InstagramCollectionViewLayout.swift */,
+				47505287229308A4005DC5C1 /* ImageSearch */,
 				47BC08E4225A33D60088BD70 /* Main.storyboard */,
 				47BC08E7225A33D70088BD70 /* Assets.xcassets */,
 				47BC08E9225A33D70088BD70 /* LaunchScreen.storyboard */,
@@ -337,12 +358,7 @@
 		47BC0906225A36000088BD70 /* BusinessLogicKit */ = {
 			isa = PBXGroup;
 			children = (
-				47BC0925225A36A70088BD70 /* ImageSearchPresenter.swift */,
-				4709C38422612345003AB09A /* ImageSearchPresenterProtocols.swift */,
-				470BCCCF225FD73300B4E8CD /* PresenterStructs.swift */,
-				47BC0923225A36570088BD70 /* ImageSearchInteractor.swift */,
-				47BC097A225CFBB70088BD70 /* LoadImagesInteractor.swift */,
-				470BCD3D2261167000B4E8CD /* DefaultJPEGImageDecoder.swift */,
+				4750528622930882005DC5C1 /* ImageSearch */,
 				47BC093D225BDAC50088BD70 /* Models */,
 				47BC0907225A36000088BD70 /* BusinessLogicKit.h */,
 				47BC0908225A36000088BD70 /* Info.plist */,
