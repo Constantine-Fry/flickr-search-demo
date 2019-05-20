@@ -11,6 +11,8 @@ import BusinessLogicKit
 
 class ViewController: UIViewController, ImageSearchViewing {
 
+    var name = ""
+
     @IBOutlet private var searchField: UISearchBar!
     @IBOutlet var errorLabel: UILabel!
     @IBOutlet private var collectienView: UICollectionView!
@@ -31,13 +33,13 @@ class ViewController: UIViewController, ImageSearchViewing {
         case .presentError(let text):
             self.activityIndicator.stopAnimating()
             self.viewItem = nil
-            self.title = "Search"
+            self.title = self.name
             self.errorLabel.text = text
             self.errorLabel.isHidden = false
         case .showEmpty:
             self.activityIndicator.stopAnimating()
             self.viewItem = nil
-            self.title = "Search"
+            self.title = self.name
             self.errorLabel.isHidden = true
         case .set(let item):
             self.activityIndicator.stopAnimating()
@@ -47,7 +49,7 @@ class ViewController: UIViewController, ImageSearchViewing {
         case .showLoading:
             self.activityIndicator.startAnimating()
             self.viewItem = nil
-            self.title = "Search"
+            self.title = self.name
             self.errorLabel.isHidden = true
         }
         self.collectienView.reloadData()

@@ -48,15 +48,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let searchRepository: ImageSearchRepositoring
         let session = URLSession(configuration: .default)
-
+        var name = ""
         switch environment {
         case .nothing:
             return UIViewController()
         case .picsum:
+            name = "Picsum"
             searchRepository = LoremImageSearchRepository(url: URL(string: "https://picsum.photos/400")!)
         case .placekittens:
+            name = "PlaceKittens"
             searchRepository = LoremImageSearchRepository(url: URL(string: "https://placekitten.com/g/400/400")!)
         case .flickr:
+            name = "Flickr"
             // This is raw bytes of Flickr API key. It doesn't add much of security, because one can anyway use
             // MITM to see all the request app sends, but anyway at least the key wouldn't be visible with strings command line.
             let keyData: [UInt8] = [51, 101, 55, 99, 99, 50, 54, 54, 97, 101, 50, 98, 48, 101, 48,
@@ -77,6 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                              imageLoadingInteractor: loadingInteractor)
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainVC") as! ViewController
         presenter.view = viewController
+        viewController.name = name
         viewController.presenter = presenter
         return viewController
     }
