@@ -38,7 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                  cacheLimit: 60*1024*1024)
         let presenter = ImageSearchPresenter(
             //interactor: ImageSearchInteractor(repository: searchRepository),
-            interactor: ImageSearchInteractor(repository: LoremImageSearchRepository()),
+            interactor: ImageSearchInteractor(repository: LoremImageSearchRepository(url: URL(string: "https://picsum.photos/400")!)),
+            //interactor: ImageSearchInteractor(repository: LoremImageSearchRepository(url: URL(string: "https://placekitten.com/g/400/400")!)),
             imageLoadingInteractor: loadingInteractor)
         let viewController = (self.window?.rootViewController as! UINavigationController).viewControllers.first!
             as! ViewController
