@@ -12,9 +12,13 @@ import BusinessLogicKit
 import FlickrKit
 
 enum Environment {
+    // Sets empty View Controller on screen.
     case nothing
+    // Uses Flick API to search images.
     case flickr
+    // Uses Picsum API to return mocked images.
     case picsum
+    // Uses Placekitten API to return mocked images.
     case placekittens
 }
 
