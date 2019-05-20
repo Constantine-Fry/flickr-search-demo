@@ -36,8 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let loadingInteractor = LoadImagesInteractor(repository: loadingRepository,
                                                  decoder: DefaultJPEGImageDecoder(),
                                                  cacheLimit: 60*1024*1024)
-        let presenter = ImageSearchPresenter(interactor: ImageSearchInteractor(repository: searchRepository),
-                                             imageLoadingInteractor: loadingInteractor)
+        let presenter = ImageSearchPresenter(
+            //interactor: ImageSearchInteractor(repository: searchRepository),
+            interactor: ImageSearchInteractor(repository: LoremImageSearchRepository()),
+            imageLoadingInteractor: loadingInteractor)
         let viewController = (self.window?.rootViewController as! UINavigationController).viewControllers.first!
             as! ViewController
         presenter.view = viewController
