@@ -78,7 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                      cacheLimit: 60*1024*1024)
         let presenter = ImageSearchPresenter(interactor: ImageSearchInteractor(repository: searchRepository),
                                              imageLoadingInteractor: loadingInteractor)
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainVC") as! ViewController
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainVC") as! SearchViewController
         presenter.view = viewController
         viewController.name = name
         viewController.presenter = presenter

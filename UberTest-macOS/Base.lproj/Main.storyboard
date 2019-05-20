@@ -701,10 +701,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="UberTest_macOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="SearchViewController" customModule="UberTest_macOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="333"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -724,7 +724,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="311"/>
                                 <clipView key="contentView" id="dkk-nU-xR9">
                                     <rect key="frame" x="1" y="1" width="478" height="309"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <collectionView id="iCn-Nf-Pxh">
                                             <rect key="frame" x="0.0" y="0.0" width="478" height="158"/>

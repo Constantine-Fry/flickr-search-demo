@@ -9,7 +9,7 @@
 import UIKit
 import BusinessLogicKit
 
-class ViewController: UIViewController, ImageSearchViewing {
+class SearchViewController: UIViewController, ImageSearchViewing {
 
     var name = ""
 
@@ -57,7 +57,7 @@ class ViewController: UIViewController, ImageSearchViewing {
 
 }
 
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.viewItem?.photos.count ?? 0
@@ -106,7 +106,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
 
 }
 
-extension ViewController: UICollectionViewDataSourcePrefetching {
+extension SearchViewController: UICollectionViewDataSourcePrefetching {
 
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         indexPaths.forEach { (indexPath) in
@@ -119,7 +119,7 @@ extension ViewController: UICollectionViewDataSourcePrefetching {
     
 }
 
-extension ViewController: UISearchBarDelegate {
+extension SearchViewController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.presenter?.search(term: searchText )
