@@ -44,7 +44,7 @@ public final class EnvironmentSelectionPresenter: EnvironmentSelectionPresenting
             SelectionItem(title: "Flickr API", action: { [weak self] in self?.didChange(.flickr) }),
             SelectionItem(title: "Picsum API", action: { [weak self] in self?.didChange(.picsum) }),
             SelectionItem(title: "Cute Kittens API", action: { [weak self] in self?.didChange(.placekittens) }),
-            SelectionItem(title: "Remove everything", action: { [weak self] in self?.didChange(nil) }),
+            SelectionItem(title: "Remove window.rootViewController", action: { [weak self] in self?.didChange(nil) }),
         ]
         self.view?.set(state: EnvironmentSelectionState(title: "Select Environment", items: items))
     }

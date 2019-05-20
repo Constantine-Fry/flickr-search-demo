@@ -172,5 +172,33 @@
             </objects>
             <point key="canvasLocation" x="785.50724637681162" y="166.30434782608697"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Mam-kq-qOI">
+            <objects>
+                <viewController storyboardIdentifier="memoryLeaksVC" id="rUq-Z4-jJh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jk5-so-45a">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This ViewController is here to check the app for memory leaks." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5b-Pn-2QG">
+                                <rect key="frame" x="23" y="357.66666666666669" width="369" height="40.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="G5b-Pn-2QG" firstAttribute="leading" secondItem="UXC-Ty-7JK" secondAttribute="leading" constant="23" id="DUX-xQ-Ohn"/>
+                            <constraint firstItem="G5b-Pn-2QG" firstAttribute="centerY" secondItem="UXC-Ty-7JK" secondAttribute="centerY" id="IDl-Nh-o0O"/>
+                            <constraint firstItem="UXC-Ty-7JK" firstAttribute="trailing" secondItem="G5b-Pn-2QG" secondAttribute="trailing" constant="22" id="gUu-pS-RzI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UXC-Ty-7JK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gu6-by-vmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1575" y="166"/>
+        </scene>
     </scenes>
 </document>

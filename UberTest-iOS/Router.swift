@@ -13,9 +13,11 @@ import FlickrKit
 final class Router {
 
     private let window: UIWindow
+    private let storyboard: UIStoryboard
 
-    init(window: UIWindow) {
+    init(window: UIWindow, storyboard: UIStoryboard) {
         self.window = window
+        self.storyboard = storyboard
     }
 
     func routeToMainViewController(with environment: Environment) {
@@ -50,7 +52,7 @@ final class Router {
                                                      cacheLimit: 60*1024*1024)
         let presenter = ImageSearchPresenter(interactor: ImageSearchInteractor(repository: searchRepository),
                                              imageLoadingInteractor: loadingInteractor)
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainVC")
+        let viewController = self.storyboard.instantiateViewController(withIdentifier: "mainVC")
             as! SearchViewController
         presenter.view = viewController
         viewController.name = name
@@ -67,14 +69,14 @@ final class Router {
     }
 
     func presentEnvironmentSelectionViewController(on onViewController: UIViewController) {
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "environmentSelectionVC")
+        let viewController = self.storyboard.instantiateViewController(withIdentifier: "environmentSelectionVC")
             as! EnvironmentSelectionViewController
         let presenter = EnvironmentSelectionPresenter { [weak self, weak viewController] environment in
             viewController?.dismiss(animated: true, completion: {
                 if let environment = environment {
                     self?.routeToMainViewController(with: environment)
                 } else {
-                    self?.window.rootViewController = UIViewController()
+                    self?.window.rootViewController = self?.storyboard.instantiateViewController(withIdentifier: "memoryLeaksVC")
                 }
             })
         }
