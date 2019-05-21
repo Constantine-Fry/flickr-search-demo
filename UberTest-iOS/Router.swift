@@ -76,7 +76,11 @@ final class Router {
                 if let environment = environment {
                     self?.routeToMainViewController(with: environment)
                 } else {
-                    self?.window.rootViewController = self?.storyboard.instantiateViewController(withIdentifier: "memoryLeaksVC")
+                    let viewController = self?.storyboard.instantiateViewController(withIdentifier: "memoryLeaksVC") as! TextViewController
+                    self?.window.rootViewController = viewController
+                    DispatchQueue.main.async {
+                        viewController.label.text = "This ViewController is here to check the app for memory leaks.\nThere is \(ResourceCounter.count()) resources."
+                    }
                 }
             })
         }

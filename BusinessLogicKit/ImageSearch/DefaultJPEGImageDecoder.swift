@@ -6,7 +6,9 @@ import Foundation
 
 public final class DefaultJPEGImageDecoder: ImageDecoding {
 
-    public init() {}
+    public init() {
+        ResourceCounter.countResource(self)
+    }
 
     public func decode(_ data: Data) -> Image? {
         if let dataProvider = CGDataProvider(data: data as CFData),

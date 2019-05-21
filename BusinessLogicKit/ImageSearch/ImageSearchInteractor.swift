@@ -13,6 +13,7 @@ public final class ImageSearchInteractor: ImageSearchUseCase {
 
     public init(repository: ImageSearchRepositoring) {
         self.repository = repository
+        ResourceCounter.countResource(self)
     }
 
     public func search(query: SearchQuery, completion: @escaping (Result<Page, Error>) -> Void) {

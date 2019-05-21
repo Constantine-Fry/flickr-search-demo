@@ -15,6 +15,7 @@ public final class ImageSearchPresenter {
     public init(interactor: ImageSearchUseCase, imageLoadingInteractor: ImagesUseCase) {
         self.interactor = interactor
         self.imageLoadingInteractor = imageLoadingInteractor
+        ResourceCounter.countResource(self)
     }
 
 }

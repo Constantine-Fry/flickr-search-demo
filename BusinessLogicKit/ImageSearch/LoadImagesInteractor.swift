@@ -43,6 +43,7 @@ public final class LoadImagesInteractor: ImagesUseCase {
         self.repository = repository
         self.queue = DispatchQueue(label: "com.app.images-interactor.queue.internal")
         self.decoder = decoder
+        ResourceCounter.countResource(self)
     }
 
     public func cachedImage(for photo: Photo) -> Image? {

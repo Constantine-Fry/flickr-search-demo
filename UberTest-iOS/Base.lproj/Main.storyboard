@@ -172,10 +172,10 @@
             </objects>
             <point key="canvasLocation" x="785.50724637681162" y="166.30434782608697"/>
         </scene>
-        <!--View Controller-->
+        <!--Text View Controller-->
         <scene sceneID="Mam-kq-qOI">
             <objects>
-                <viewController storyboardIdentifier="memoryLeaksVC" id="rUq-Z4-jJh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="memoryLeaksVC" id="rUq-Z4-jJh" customClass="TextViewController" customModule="UberTest_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jk5-so-45a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -195,6 +195,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UXC-Ty-7JK"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="G5b-Pn-2QG" id="zbC-lO-eRV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gu6-by-vmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

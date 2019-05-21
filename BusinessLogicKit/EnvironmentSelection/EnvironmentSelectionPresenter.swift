@@ -37,6 +37,7 @@ public final class EnvironmentSelectionPresenter: EnvironmentSelectionPresenting
 
     public init(didChange: @escaping (Environment?) -> ()) {
         self.didChange = didChange
+        ResourceCounter.countResource(self)
     }
 
     public func ready() {
