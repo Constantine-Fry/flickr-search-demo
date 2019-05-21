@@ -14,16 +14,17 @@ final class Router {
 
     private let window: UIWindow
     private let storyboard: UIStoryboard
+    private let session: URLSession
 
-    init(window: UIWindow, storyboard: UIStoryboard) {
+    init(window: UIWindow, storyboard: UIStoryboard, session: URLSession) {
         self.window = window
         self.storyboard = storyboard
+        self.session = session
     }
 
     func routeToMainViewController(with environment: Environment) {
 
         let searchRepository: ImageSearchRepositoring
-        let session = URLSession(configuration: .default)
         var name = ""
         switch environment {
         case .picsum:
@@ -40,7 +41,7 @@ final class Router {
                                     100, 55, 56, 101, 50, 55, 57, 99, 101, 56, 101, 51, 54, 49, 55, 51, 54]
 
             searchRepository = FlickrImageSearchRepository(
-                session: session,
+                session: self.session,
                 requestFactory: FlickrApiUrlFactory(apiKey: String(bytes: keyData, encoding: .utf8)!),
                 deserializer: JsonDataDeserializer(),
                 queue: DispatchQueue(label: "com.app.flickr-repository.queue"))

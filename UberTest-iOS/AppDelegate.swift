@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private var router: Router!
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        self.router = Router(window: self.window!, storyboard: UIStoryboard(name: "Main", bundle: nil))
+        self.router = Router(window: self.window!,
+                             storyboard: UIStoryboard(name: "Main", bundle: nil),
+                             session: URLSession(configuration: .default))
         self.router.routeToMainViewController(with: .flickr)
         return true
     }
