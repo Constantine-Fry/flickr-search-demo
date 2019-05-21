@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		47030CEC2261316800356551 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47030CEB2261316800356551 /* AppDelegate.swift */; };
-		47030CEE2261316800356551 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47030CED2261316800356551 /* ViewController.swift */; };
+		47030CEE2261316800356551 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47030CED2261316800356551 /* SearchViewController.swift */; };
 		47030CF02261316900356551 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47030CEF2261316900356551 /* Assets.xcassets */; };
 		47030CF32261316900356551 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47030CF12261316900356551 /* Main.storyboard */; };
 		47030CFB226131DD00356551 /* BusinessLogicKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4709C39A226126A2003AB09A /* BusinessLogicKit.framework */; };
@@ -144,7 +144,7 @@
 /* Begin PBXFileReference section */
 		47030CE92261316800356551 /* UberTest-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UberTest-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47030CEB2261316800356551 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		47030CED2261316800356551 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		47030CED2261316800356551 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		47030CEF2261316900356551 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47030CF22261316900356551 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		47030CF42261316900356551 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -266,7 +266,7 @@
 			children = (
 				47A56A3F2262857900393693 /* UberTest-macOS.entitlements */,
 				47030CEB2261316800356551 /* AppDelegate.swift */,
-				47030CED2261316800356551 /* ViewController.swift */,
+				47030CED2261316800356551 /* SearchViewController.swift */,
 				47A56A3B2262826600393693 /* CollectionViewItem.swift */,
 				47A56A3C2262826600393693 /* CollectionViewItem.xib */,
 				47030CEF2261316900356551 /* Assets.xcassets */,
@@ -713,7 +713,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47030CEE2261316800356551 /* ViewController.swift in Sources */,
+				47030CEE2261316800356551 /* SearchViewController.swift in Sources */,
 				47030CEC2261316800356551 /* AppDelegate.swift in Sources */,
 				47A56A3D2262826600393693 /* CollectionViewItem.swift in Sources */,
 			);

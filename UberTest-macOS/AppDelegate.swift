@@ -31,7 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                                      cacheLimit: 60*1024*1024)
         let presenter = ImageSearchPresenter(interactor: ImageSearchInteractor(repository: searchRepository),
                                              imageLoadingInteractor: loadingInteractor)
-        let viewController = NSApplication.shared.windows.first?.contentViewController as! ViewController
+        let viewController = NSApplication.shared.windows.first?.contentViewController as! SearchViewController
         presenter.view = viewController
         viewController.presenter = presenter
 

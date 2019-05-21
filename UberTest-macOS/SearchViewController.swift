@@ -9,7 +9,7 @@
 import Cocoa
 import BusinessLogicKit
 
-class ViewController: NSViewController, ImageSearchViewing {
+class SearchViewController: NSViewController, ImageSearchViewing {
 
     private var viewItem: ImageSearchViewItem?
 
@@ -45,7 +45,7 @@ class ViewController: NSViewController, ImageSearchViewing {
 
 }
 
-extension ViewController: NSSearchFieldDelegate {
+extension SearchViewController: NSSearchFieldDelegate {
 
     func controlTextDidChange(_ obj: Notification) {
         self.presenter?.search(term: self.searchField.stringValue)
@@ -53,7 +53,7 @@ extension ViewController: NSSearchFieldDelegate {
 
 }
 
-extension ViewController: NSCollectionViewDataSource, NSCollectionViewDelegate {
+extension SearchViewController: NSCollectionViewDataSource, NSCollectionViewDelegate {
 
     func numberOfSections(in collectionView: NSCollectionView) -> Int {
         return 1
@@ -98,7 +98,7 @@ extension ViewController: NSCollectionViewDataSource, NSCollectionViewDelegate {
 
 }
 
-extension ViewController: NSCollectionViewPrefetching {
+extension SearchViewController: NSCollectionViewPrefetching {
 
     func collectionView(_ collectionView: NSCollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
 
