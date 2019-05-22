@@ -8,7 +8,9 @@ import BusinessLogicKit
 
 public final class JsonDataDeserializer: Deserializing {
 
-    public init() {}
+    public init() {
+        ResourceCounter.countResource(self)
+    }
 
     public var contentTypes: Set<String> = ["application/json", "application/x-javascript",
                                             "text/javascript", "text/x-javascript", "text/x-json"]

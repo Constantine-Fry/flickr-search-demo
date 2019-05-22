@@ -12,6 +12,7 @@ public final class ImageRepository: ImagesRepositoring {
 
     public init(session: URLSession) {
         self.session = session
+        ResourceCounter.countResource(self)
     }
 
     public func loadData(_ url: URL) -> TaskProtocol {

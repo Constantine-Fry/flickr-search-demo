@@ -28,6 +28,7 @@ public final class FlickrImageSearchRepository: ImageSearchRepositoring {
         self.requestFactory = requestFactory
         self.queue = queue
         self.deserializer = deserializer
+        ResourceCounter.countResource(self)
     }
 
     public func search(query: SearchQuery, completion: @escaping (Result<Page, Error>) -> Void) {

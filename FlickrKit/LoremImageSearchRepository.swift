@@ -12,6 +12,7 @@ public final class LoremImageSearchRepository: ImageSearchRepositoring {
 
     public init(url: URL) {
         self.url = url
+        ResourceCounter.countResource(self)
     }
 
     public func search(query: SearchQuery, completion: @escaping (Result<Page, Error>) -> Void) {
